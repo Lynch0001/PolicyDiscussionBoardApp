@@ -1,0 +1,76 @@
+
+<header class="masthead" style="background-image: url(&quot;assets/img/united-nations-3760656_1920.jpg&quot;);">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 mx-auto">
+        <div class="post-heading">
+          <h1>"You cannot shake hands with a clenched fist."</h1>
+          <h2 class="subheading">- Indira Gandhi, 1982</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8">
+        <div class="post">
+            <h2 class="post-title">{{discussion.discussTitle}}</h2>
+            <h3 class="post-subtitle">{{discussion.discussSubTitle}}</h3>
+          <div class="row">
+            <div class="tags" *ngFor="let tag of showTags">
+              <div *ngFor="let t of tag | keyvalue">
+                <button type="button" class="tag-button" *ngIf="t.key=='tag'">{{t.value}}</button>
+              </div>
+            </div>
+          </div>
+          <p class="post-meta">Posted by&nbsp;<a href="#">{{discussion.contributor}}</a> on {{discussion.discussTimestamp | date:'short'}}</p>
+          <p class="post-content">{{discussion.discussContent}}</p>
+          <span class="row">
+            <div class="post-button-reply">
+              <button class="btn btn-dark btn-sm" (click)="loadAddComponent()">comment</button>
+            </div>
+
+
+            <div class="post-button-reply" *ngIf="auth.currentUserValue.roles=='ROLE_ADMIN'">
+              <a class="btn btn-danger btn-sm" (click)="delete(discussion.id)"> delete </a>
+            </div>
+
+
+
+          </span>
+          <hr>
+
+          <app-add-comment [discussionData]="discussion"  *ngIf="addComponent"></app-add-comment>
+
+          <div class="container" *ngIf="discussion.comments.length>0; else noComments">
+            <p>Comments</p>
+            <div *ngFor="let comment of discussion.comments">
+              <div class="card">
+                <div class="card-body">
+                  <p>{{comment.commentContent}}</p>
+                </div>
+                <div class="card-footer">
+                  <p>Submitted by: {{comment.contributor}} on {{comment.commentTimeStamp | date: "medium"}}</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <ng-template #noComments>
+            <p>There are no comments on this post; be the first!</p>
+          </ng-template>
+
+
+
+
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script src="assets/js/clean-blog.js"></script>

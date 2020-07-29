@@ -1,0 +1,46 @@
+
+  <div class="container-lg">
+  <div class="table table-small">
+    <table id="left-table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">MessageId</th>
+        <th scope="col">From</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date/Time</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let message of messages">
+        <td><a class="nav-link"  >{{message.id}}</a></td>
+        <td>{{message.name}}</td>
+        <td>{{message.email}}</td>
+        <td>{{message.messageTimestamp | date:'short'}}</td>
+        <td>
+          <div class="form-inline">
+          <button class="button btn-outline-secondary btn-sm" (click)="showSelectedMessage(message.id)">Read</button>
+          <button class="button btn-outline-danger btn-sm" (click)="deleteMessage(message.id)">Delete</button>
+          </div>
+        </td>
+     </tr>
+     </tbody>
+    </table>
+ </div>
+
+    <div class="table table-responsive table-small" *ngIf="showMessage==true">
+      <table id="right-table">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="colgroup">Message</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{this.messageData['message']}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

@@ -1,0 +1,12 @@
+.tag-button{
+  font-size: .5em;
+  border-radius: 4px;
+  display: inline-block;
+  margin-left: 2em;
+}
+.buttons{
+  display: inline-block;
+}
+.tags{
+  margin-left: 0em;
+}

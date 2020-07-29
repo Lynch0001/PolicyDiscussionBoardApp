@@ -1,0 +1,19 @@
+.tag-button{
+  font-size: .75em;
+  border-radius: 4px;
+  display: inline-block;
+  margin-left: 1em;
+}
+.btn-success{
+  color:black;
+  background-color: #c1bebe;
+  border: black 1px solid;
+  display:inline-block;
+  float:right;
+  position: relative;
+  bottom: 1em;
+}
+#tag{
+  display:inline-block;
+}
+

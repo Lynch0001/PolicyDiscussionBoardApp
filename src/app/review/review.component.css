@@ -1,0 +1,33 @@
+.tag-button{
+  font-size: .5em;
+  border-radius: 4px;
+  display: inline-block;
+  margin-left: 2em;
+}
+.buttons{
+  display: inline-block;
+}
+.btn-dark{
+  display: inline-block;
+  font-size: .5em;
+  border-radius: 4px;
+  margin-right: 1em;
+  margin-left: 2em;
+}
+.btn-danger{
+  display: inline-block;
+  font-size: .5em;
+  border-radius: 4px;
+}
+
+.card{
+  display:block;
+  margin-bottom: 1em;
+}
+
+.card-footer{
+  font-size: .5em
+}
+.tags{
+  margin-left: 0em;
+}

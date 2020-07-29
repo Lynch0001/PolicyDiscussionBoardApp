@@ -1,0 +1,71 @@
+
+<header class="masthead" style="background-image: url(&quot;assets/img/typewriter-1031024_1920.jpg&quot;);">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 mx-auto">
+        <div class="site-heading">
+          <h1>Start a Discussion</h1><span class="subheading">Have something to say? Let's Discuss.</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-auto">
+
+      <p>Share you thoughts!</p>
+
+        <form id="contactForm" #form='ngForm' name="sentMessage" ngNativeValidate>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Title</label>
+            <input class="form-control" type="text" id="title" [(ngModel)]="discussionData.discussTitle" name="title" placeholder="Title" required>
+            </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>SubTitle</label>
+            <input class="form-control" type="text" id="subtitle" [(ngModel)]="discussionData.discussSubTitle" name="subtitle" placeholder="SubTitle">
+            </div>
+        </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Content</label>
+            <textarea class="form-control" type="text" id="content" [(ngModel)]="discussionData.discussContent" name="content" placeholder="Start your discussion here!" required></textarea>
+            </div>
+        </div>
+
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls mb-3">
+            <label>Tags</label>
+                <span class="new-tag-section" *ngFor="let tag of tempTags">
+                  <button class="tag-button">{{tag}}</button>
+                </span>
+              <br>
+              <div class="tag-section">
+                <input class="form-control col-6" id="tag" [(ngModel)]="tempTag" name="tag" maxlength="15" placeholder="Add one or more tags">
+                <button class="button btn-success btn-sm" (click)="addTag(tempTag)">Add</button>
+              </div>
+
+            </div>
+        </div>
+
+        <div id="success"></div>
+        <div class="form-group"><button class="btn btn-primary" id="postDiscussionButton" type="submit" [disabled]="form.invalid" (click)="addDiscussion()">Submit</button></div>
+      </form>
+
+      </div>
+  </div>
+    </div>
+
+
+
+<hr>
+
+
+<script src="assets/js/clean-blog.js"></script>
+

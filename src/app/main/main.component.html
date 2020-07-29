@@ -1,0 +1,45 @@
+<header class="masthead" style="background-image: url(&quot;assets/img/united-nations-3760656_1920.jpg&quot;);">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 mx-auto">
+        <div class="post-heading">
+          <h1>"You cannot shake hands with a clenched fist."</h1>
+          <h2 class="subheading">- Indira Gandhi, 1982</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8">
+      <div class="post-preview" *ngFor="let discussion of discussions">
+        <a href="#" routerLink="/review/{{discussion.id}}">
+          <h2 class="post-title">{{discussion.discussTitle}}</h2>
+          <h3 class="post-subtitle">{{discussion.discussSubTitle}}</h3>
+        </a>
+        <div class="row">
+          <div class="tags" *ngFor="let tags of discussion.tags">
+            <div *ngFor="let tag of tags | keyvalue">
+              <button type="button" class="tag-button" *ngIf="tag.key=='tag'">{{tag.value}}</button>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="tag-button" *ngFor="let item of showTags | keyvalue">{{item.key}}:{{item.value}}</button>
+
+        <p class="post-meta">Posted by&nbsp;<a href="#">{{discussion.contributor}}</a> on {{discussion.discussTimestamp | date: 'short'}}</p>
+      </div>
+      <hr>
+
+<!--
+      <div class="clearfix"><button class="btn btn-primary float-right" type="button">Older Posts&nbsp;⇒</button></div>
+ -->
+
+    </div>
+  </div>
+</div>
+
+
+<script src="assets/js/clean-blog.js"></script>

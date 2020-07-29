@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="table table-responsive table-small">
+    <caption>Users</caption>
+    <table class="mx-auto w-auto">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Username</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Activated</th>
+      <th scope="col">Last Login</th>
+      <th scope="col">Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td><a class="nav-link" routerLink="/admin-users-edit/{{user.id}}">{{user.id}}</a></td>
+      <td>{{user.username}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.dateActivated | date:'short'}}</td>
+      <td>{{user.lastLogin | date:'short'}}</td>
+      <td>{{user.roles}}</td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
