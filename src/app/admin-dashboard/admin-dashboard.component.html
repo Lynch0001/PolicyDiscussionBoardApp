@@ -1,0 +1,25 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 mx-auto">
+        <div class="post-heading">
+          <h2>Site Administration Dashboard</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <button type="button" class="btn btn-sm btn-light" (click)="showOption=1">View Messages</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showOption=2">Manage Users</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showMessages()">Manage Discussions</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showMessages()">Manage Comments</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showMessages()">Manage Tags</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showMessages()">Show Activity</button>
+  </div>
+</div>
+<app-admin-messages *ngIf="showOption==1"></app-admin-messages>
+<app-admin-users *ngIf="showOption==2"></app-admin-users>
+

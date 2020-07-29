@@ -1,0 +1,12 @@
+
+.post-heading{
+  color: red;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.btn{
+  font-size: small;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}

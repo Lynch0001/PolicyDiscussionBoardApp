@@ -1,0 +1,8 @@
+<div class="container">
+  <form id="commentForm" (ngSubmit)="updateDiscussion()" #commentForm="ngForm">
+    <p>Adding a comment to the current discussion</p>
+    <textarea type="text" class="form-control" name="content" #comment="ngModel" [(ngModel)]="commentData.commentContent" required></textarea>
+    <button type="submit" class="button btn-primary btn-sm" [disabled]="comment.invalid || comment.pristine">Submit</button>
+  </form>
+  <hr>
+</div>

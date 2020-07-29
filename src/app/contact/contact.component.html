@@ -1,0 +1,43 @@
+
+
+<header class="masthead" style="background-image: url(&quot;assets/img/iphone-410324_1920.jpg&quot;);">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 mx-auto">
+        <div class="site-heading">
+          <h1>Contact Me</h1><span class="subheading">Have questions? Let's Discuss.</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <h6>Send me a message with your contact information and I'll get back to you as soon as I can!</h6>
+  <br>
+  <form #contactForm="ngForm" autocomplete="off" (ngSubmit)="addMessage()">
+      <div class="form-group">
+        <label>Name</label>
+        <input name="name" class="form-control" #name="ngModel" pattern="^[a-z .,A-Z]+$" [(ngModel)]="messageData.name" required>
+        <small [hidden]="name.untouched || name.valid" class="text-danger">Name field requires valid input</small>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input name="email" class="form-control" type="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" [(ngModel)]="messageData.email" required>
+        <small [hidden]="email.untouched || email.valid" class="text-danger">Email field requires valid input</small>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" class="form-control" #message="ngModel" [(ngModel)]="messageData.message" rows="5" required></textarea>
+        <small [hidden]="message.untouched || message.valid" class="text-danger">Message field requires valid input</small>
+      </div>
+    <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid">Send</button>
+  </form>
+</div>
+<hr>
+
+
+
+
+<script src="assets/js/clean-blog.js"></script>
+
