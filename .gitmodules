@@ -1,5 +1,0 @@
-[submodule "path_to_submodule"]
-  path = src/
-  url = git@github.com:Lynch0001/PolicyDiscussionBoard.git
-
-
