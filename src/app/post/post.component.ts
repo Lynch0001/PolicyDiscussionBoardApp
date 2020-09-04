@@ -21,7 +21,12 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
+
   addDiscussion() {
+    if(this.tempTags == null || this.tempTags == ''){
+      alert('Please enter a subject tag for this post!');
+      return;
+    }
     this.discussionData.tags = this.tempTags;
     let contributor:String = this.auth.currentUserValue.firstName + " " + this.auth.currentUserValue.lastName;
     console.log("adding contributor to discussion", contributor);
