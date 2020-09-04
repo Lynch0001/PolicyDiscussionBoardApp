@@ -38,6 +38,10 @@ export class PostComponent implements OnInit {
   }
 
   addTag(tag: String){
+    if(tag == null || tag == ''){
+      alert('Please enter a subject tag for this post!');
+      return;
+    }
     this.tempTags.push(tag);
     this.tempTag='';
   }
