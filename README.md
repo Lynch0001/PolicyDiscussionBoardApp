@@ -150,7 +150,7 @@ Tim Lynch
 * Stackoverflow [tim-lynch](https://stackoverflow.com/users/11063468/tim-lynch)
 * Email Lynch0001@gmail.com
 
-Project Link: [https://github.com/lynch0001/PolicyDiscussionBoard](https://github.com/lynch0001/PolicyDiscussionBoard)
+Project Link: [https://github.com/lynch0001/PolicyDiscussionBoardApp](https://github.com/lynch0001/PolicyDiscussionBoardApp)
 
 
 
@@ -165,16 +165,16 @@ Project Link: [https://github.com/lynch0001/PolicyDiscussionBoard](https://githu
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/lynch0001/PolicyDiscussionBoard.svg?style=flat-square
-[contributors-url]: https://github.com/lynch0001/PolicyDiscussionBoard/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/lynch0001/PolicyDiscussionBoard.svg?style=flat-square
-[forks-url]: https://github.com/lynch0001/PolicyDiscussionBoard/network/members
-[stars-shield]: https://img.shields.io/github/stars/lynch0001/PolicyDiscussionBoard.svg?style=flat-square
-[stars-url]: https://github.com/lynch0001/PolicyDiscussionBoard/stargazers
-[issues-shield]: https://img.shields.io/github/issues/lynch0001/PolicyDiscussionBoard.svg?style=flat-square
-[issues-url]: https://github.com/lynch0001/PolicyDiscussionBoard/issues
-[license-shield]: https://img.shields.io/github/license/lynch0001/PolicyDiscussionBoard.svg?style=flat-square
-[license-url]: https://github.com/lynch0001/PolicyDiscussionBoard/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/lynch0001/PolicyDiscussionBoardApp.svg?style=flat-square
+[contributors-url]: https://github.com/lynch0001/PolicyDiscussionBoardApp/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/lynch0001/PolicyDiscussionBoardApp.svg?style=flat-square
+[forks-url]: https://github.com/lynch0001/PolicyDiscussionBoardApp/network/members
+[stars-shield]: https://img.shields.io/github/stars/lynch0001/PolicyDiscussionBoardApp.svg?style=flat-square
+[stars-url]: https://github.com/lynch0001/PolicyDiscussionBoardApp/stargazers
+[issues-shield]: https://img.shields.io/github/issues/lynch0001/PolicyDiscussionBoardApp.svg?style=flat-square
+[issues-url]: https://github.com/lynch0001/PolicyDiscussionBoardApp/issues
+[license-shield]: https://img.shields.io/github/license/lynch0001/PolicyDiscussionBoardApp.svg?style=flat-square
+[license-url]: https://github.com/lynch0001/PolicyDiscussionBoardApp/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/timothy-j-lynch/
 [product-screenshot]: https://user-images.githubusercontent.com/35854692/89041019-a6d3ec80-d312-11ea-97fc-092001b9546c.png
