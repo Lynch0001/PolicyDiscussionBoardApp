@@ -5,15 +5,33 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
+      <!-- always -->
       <li class="nav-item active"><a class="nav-link" routerLink="/home">Home</a></li>
+
+      <!-- always -->
       <li class="nav-item active"><a class="nav-link" routerLink="/main">Review Discussions </a></li>
-      <li class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/post">Start a Discussion</a></li>
+
+      <!-- only if logged in -->
+      <li *ngIf="auth.currentUserValue!=null" class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/post">Start a Discussion</a></li>
+
+      <!-- always -->
       <li class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/about">About Me</a></li>
+
+      <!-- always -->
       <li class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/contact">Contact Me</a></li>
-      <li class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/register">Register</a></li>
-      <li class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a></li>
+
+      <!-- not when logged in  -->
+      <li *ngIf="auth.currentUserValue==null" class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/register">Register</a></li>
+
+      <!-- not when logged in  -->
+      <li *ngIf="auth.currentUserValue==null" class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a></li>
+
+      <!-- only when logged in as admin -->
       <li *ngIf="auth.currentUserValue!=null && auth.currentUserValue.roles=='ROLE_ADMIN'" class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/admin-dashboard">Admin</a></li>
-      <li class="nav-item active"><a class="nav-link" routerLinkActive="active"(click)="logout()">Logout</a></li>
+
+      <!-- only if logged in -->
+      <li *ngIf="auth.currentUserValue!=null" class="nav-item active"><a class="nav-link" routerLinkActive="active"(click)="logout()">Logout</a></li>
     </ul>
   </div>
 </nav>

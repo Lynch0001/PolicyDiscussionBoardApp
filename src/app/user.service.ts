@@ -35,6 +35,7 @@ export class UserService {
   }
 
   addUser(user): Observable<any> {
+    console.log('Add user method in UserService');
     console.log(user);
     return this.http.post<any>(this.endpoint + 'users/register', JSON.stringify(user), this.httpOptions).pipe(
       tap((user) => console.log(`added username=${user.username}`))

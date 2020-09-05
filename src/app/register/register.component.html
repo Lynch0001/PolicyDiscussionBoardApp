@@ -31,7 +31,7 @@
 
           <div class="form-group">
             <label>Email Address</label>
-            <input class="form-control" type="email" id="email" name="email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="registrationData.email" required>
+            <input class="form-control" type="email" id="email" name="email" #email="ngModel" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" [(ngModel)]="registrationData.email" required>
             <small [hidden]="email.pristine || email.valid" class="form-text text-danger help-block">Please enter a complete email address.</small>
           </div>
 
