@@ -11,6 +11,7 @@ export class AuthService {
   endpoint = "http://localhost:8080/api/";
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
+  public registeredUser: boolean = false;
 
   constructor(private http: HttpClient, private rest: RestService, private router:Router) {
     console.log("AuthService Constructor");
@@ -50,6 +51,7 @@ export class AuthService {
     console.log("Logout activated");
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
+    this.registeredUser = false;
     this.router.navigate(["/logout"])
   }
 

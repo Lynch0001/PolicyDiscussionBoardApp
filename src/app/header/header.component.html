@@ -22,7 +22,7 @@
       <li class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/contact">Contact Me</a></li>
 
       <!-- not when logged in  -->
-      <li *ngIf="auth.currentUserValue==null" class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/register">Register</a></li>
+      <li *ngIf="auth.currentUserValue==null && auth.registeredUser==false" class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/register">Register</a></li>
 
       <!-- not when logged in  -->
       <li *ngIf="auth.currentUserValue==null" class="nav-item active"><a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a></li>

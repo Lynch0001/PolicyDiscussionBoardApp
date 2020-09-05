@@ -11,6 +11,8 @@ export class HeaderComponent implements OnInit {
   constructor(private auth:AuthService) { }
 
   ngOnInit() {
+    console.log('header - reg: ' + this.auth.registeredUser);
+    console.log('header - user: ' + this.auth.currentUserValue);
   }
   logout(){
     this.auth.logout();

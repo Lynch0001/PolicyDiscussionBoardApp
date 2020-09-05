@@ -19,8 +19,8 @@ import {AdminUsersEditComponent} from "./admin-dashboard/admin-users-edit/admin-
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
   { path: 'home', component: HomeComponent},
-  { path: 'main', component: MainComponent, canActivate:[AuthGuard]},
-  { path: 'main/reload', component: MainComponent, canActivate:[AuthGuard]},
+  { path: 'main', component: MainComponent},
+  { path: 'main/reload', component: MainComponent},
   { path: 'review/:id', component: ReviewComponent, canActivateChild:[AuthGuard]},
   { path: 'post', component: PostComponent, canActivate:[AuthGuard]},
   { path: 'admin-users-edit/:id', component: AdminUsersEditComponent},

@@ -76,4 +76,11 @@ public class UserController {
   public List<String> findAllUsernames(){
     return userRepository.findAllUsernames();
   }
+
+  // check if single user email is registered "/users/{username}"
+
+  @GetMapping("/users/useremails/all")
+  public List<String> findAllEmails(){
+    return userRepository.findAllEmails();
+  }
 }

@@ -24,6 +24,11 @@ export class UserService {
       map(this.extractData));
   }
 
+  getAllUserEmails(): Observable<any>{
+    return this.http.get(this.endpoint + 'users/useremails/all').pipe(
+      map(this.extractData));
+  }
+
   getUsers(): Observable<any>{
     return this.http.get(this.endpoint + 'users').pipe(
       map(this.extractData));
