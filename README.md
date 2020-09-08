@@ -9,13 +9,13 @@
 
 
 <!-- PROJECT LOGO -->
-<!--  
+
 <br />
 <p align="center">
-  <a href="https://github.com/lynch0001/PolicyDiscussionBoardApp">
+  <a href="https://github.com/Lynch0001/PolicyDiscussionBoardApp/blob/master/FDP-removebg-preview.png">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
--->
+
   <h3 align="center">Policy Discussion Board</h3>
 
   <p align="center">
