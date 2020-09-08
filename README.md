@@ -12,11 +12,10 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/Lynch0001/PolicyDiscussionBoardApp/blob/master/FDP-removebg-preview.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+    <img src="https://user-images.githubusercontent.com/35854692/92497346-3c428600-f1c7-11ea-9e6a-ea3ffca3bd71.png" alt="Logo" width="577" height="433">
 
-  <h3 align="center">Policy Discussion Board</h3>
+
+  <h3 align="center">Foreign and Defense Policy Forum</h3>
 
   <p align="center">
     App to exchange views on foreign and defense policy matters
