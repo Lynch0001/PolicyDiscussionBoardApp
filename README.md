@@ -12,7 +12,7 @@
 
 <br />
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/35854692/92497346-3c428600-f1c7-11ea-9e6a-ea3ffca3bd71.png" alt="Logo" width="577" height="433">
+    <img src="https://user-images.githubusercontent.com/35854692/92498263-66487800-f1c8-11ea-8a58-a5429de627e7.png" alt="Logo" width="577" height="433">
 
 
   <h3 align="center">Foreign and Defense Policy Forum</h3>
