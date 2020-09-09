@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RestService} from "../rest.service";
-import { FormsModule } from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
+import {RestService} from '../rest.service';
+import { FormsModule } from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -25,10 +25,10 @@ export class ContactComponent implements OnInit {
     console.log(this.messageData);
 
     this.rest.addMessage(this.messageData).subscribe(res => {
-      console.log("Added message without errors: ", res);
+      console.log('Added message without errors: ', res);
       this.router.navigate(['/main']);
     }, (err) => {
-      console.log("Error Adding Comment: ", err);
+      console.log('Error Adding Comment: ', err);
       this.router.navigate(['/main']);
     });
   }

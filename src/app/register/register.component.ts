@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {ActivatedRoute, Router} from "@angular/router";
-import {UserService} from "../user.service";
-import {AuthService} from "../security/auth.service";
+import {HttpClient} from '@angular/common/http';
+import {ActivatedRoute, Router} from '@angular/router';
+import {UserService} from '../user.service';
+import {AuthService} from '../security/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -19,22 +19,22 @@ export class RegisterComponent implements OnInit {
   constructor(private http:HttpClient, private userService:UserService, private router:Router, private route: ActivatedRoute, private auth:AuthService) { }
 
   ngOnInit() {
-    console.log("Register Component - CurrentUser: ", this.auth.currentUser);
+    console.log('Register Component - CurrentUser: ', this.auth.currentUser);
     if (this.auth.currentUserValue) {
-      alert("Already Registered");
+      alert('Already Registered');
       this.router.navigate(['/main']);
     }
-    console.log("Getting all usernames");
+    console.log('Getting all usernames');
     this.userService.getAllUsernames().subscribe((data: string[]) => {
       console.log('Register component - usernames loading');
       this.userUsernameList = data;
-      console.log("Usernames retrieved: ", this.userUsernameList);
+      console.log('Usernames retrieved: ', this.userUsernameList);
     })
-    console.log("Getting all emails");
+    console.log('Getting all emails');
     this.userService.getAllUserEmails().subscribe((data: string[]) => {
       console.log('Register component - emails loading');
       this.userEmailList = data;
-      console.log("User Emails retrieved: ", this.userEmailList);
+      console.log('User Emails retrieved: ', this.userEmailList);
     })
   }
 
@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
     this.auth.registeredUser = true;
     // submit registration data
     this.userService.addUser(registrationData).subscribe(res => {
-      console.log("Added user without errors: ", res);},
+      console.log('Added user without errors: ', res);},
         error => {console.log('User Registration error while processing: ' + error);},
       () => {console.log('User Registration Complete without errors');}
       );

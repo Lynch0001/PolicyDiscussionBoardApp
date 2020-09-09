@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RestService} from "../rest.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {AuthService} from "../security/auth.service";
+import {RestService} from '../rest.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../security/auth.service';
 
 @Component({
   selector: 'app-review',
@@ -19,7 +19,7 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log("Role of current user: ", this.auth.currentUserValue.roles);
+    console.log('Role of current user: ', this.auth.currentUserValue.roles);
 
     this.rest.getDiscussion(this.route.snapshot.params['id']).subscribe((data: {}) => {
       console.log('Review component - data loading');
@@ -32,10 +32,10 @@ export class ReviewComponent implements OnInit {
 
   delete(id:number){
     this.rest.deleteDiscussion(id).subscribe(res => {
-        console.log("Deleted Discussion without errors: ", res);
+        console.log('Deleted Discussion without errors: ', res);
         this.router.navigate(['main']);
       }, (err) => {
-        console.log("Error Deleting Discussion: ", err);
+        console.log('Error Deleting Discussion: ', err);
         this.router.navigate(['main']);
       });
   }

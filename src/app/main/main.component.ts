@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RestService} from "../rest.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {RestService} from '../rest.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../security/auth.service';
 
 
 @Component({
@@ -13,11 +14,11 @@ export class MainComponent implements OnInit {
   showTags:any = [];
   discussions: any = [];
 
-  constructor(public rest : RestService, private route : ActivatedRoute, private router : Router) {
+  constructor(public rest : RestService, private route : ActivatedRoute, private router : Router, private auth:AuthService) {
     console.log('Main component - activated constructor');
     this.discussions = [];
     this.showTags =[];
-    this.rest.getDiscussions().subscribe((data: {}) => {
+    this.rest.getDiscussionHeaders().subscribe((data: {}) => {
       console.log('Main component - data loading');
       this.discussions = data;
       this.showTags = this.discussions.tags;
@@ -26,6 +27,17 @@ export class MainComponent implements OnInit {
   }
   ngOnInit() {
 
+  }
+
+  checkLoginAndRoute(id:number){
+    console.log('Main - User Check: ' + this.auth.currentUserValue);
+    if(this.auth.currentUserValue == null){
+      alert('You must register and log in to view discussion content.');
+      this.router.navigate(['home']);
+    }
+    else{
+      this.router.navigate(['review/', 'id']);
+    }
   }
 
 }

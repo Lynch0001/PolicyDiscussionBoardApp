@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import {AuthService} from "../security/auth.service";
+import {AuthService} from '../security/auth.service';
 
 
 @Component({ templateUrl: 'login.component.html' })
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit{
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
                       private router: Router, private authService: AuthService) {
     // redirect to main if already logged in
-    console.log("Login Constructor - currentUserValue: ", this.authService.currentUserValue);
+    console.log('Login Constructor - currentUserValue: ', this.authService.currentUserValue);
     if (this.authService.currentUserValue) {
       this.router.navigate(['/main']);
     }
@@ -30,7 +30,7 @@ ngOnInit() {
   });
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    console.log("Login - init - returnUrl: ", this.returnUrl);
+    console.log('Login - init - returnUrl: ', this.returnUrl);
   }
 
   // convenience getter for easy access to form fields
@@ -43,13 +43,13 @@ ngOnInit() {
       return;
     }
     this.loading = true;
-    console.log("Login Component calling AuthService with credentials");
+    console.log('Login Component calling AuthService with credentials');
     this.authService.login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         (data:{}) => {
-          console.log("Login response - data", data);
-          console.log("Login response - returnURL", this.returnUrl);
+          console.log('Login response - data', data);
+          console.log('Login response - returnURL', this.returnUrl);
           this.router.navigate([this.returnUrl]);
         },
         error => {

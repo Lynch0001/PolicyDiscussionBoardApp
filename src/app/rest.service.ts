@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from "@angular/common/http";
-import {Observable, of} from "rxjs";
-import {map, catchError, tap} from "rxjs/operators";
-import {AuthService} from "./security/auth.service";
-import {User} from "./model/user";
+import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/common/http';
+import {Observable, of} from 'rxjs';
+import {map, catchError, tap} from 'rxjs/operators';
+import {AuthService} from './security/auth.service';
+import {User} from './model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,11 @@ export class RestService {
 
   getDiscussions(): Observable<any>{
     return this.http.get(this.endpoint + 'discussions').pipe(
+      map(this.extractData));
+  }
+
+  getDiscussionHeaders(): Observable<any>{
+    return this.http.get(this.endpoint + 'discussionheaders').pipe(
       map(this.extractData));
   }
 
@@ -54,13 +59,13 @@ export class RestService {
 
 
   getUser(credentials:any): Observable<any> {
-    console.log("Rest Service received credentials: ", credentials);
+    console.log('Rest Service received credentials: ', credentials);
     const headers = new HttpHeaders(credentials ? {
       authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
     } : {});
-    console.log("Rest Service header data: ", headers);
+    console.log('Rest Service header data: ', headers);
     let params = new HttpParams().append('username', credentials.username);
-    console.log("Retrieving user information from server");
+    console.log('Retrieving user information from server');
     return this.http.get<any>(this.endpoint + 'user', {headers: headers, params:params}).pipe(
       map(this.extractData));
   }
@@ -71,7 +76,7 @@ export class RestService {
   }
 
   addMessage(message): Observable<any> {
-    console.log("Sending message: " , message);
+    console.log('Sending message: ' , message);
     return this.http.post<any>(this.endpoint + 'messages/send', JSON.stringify(message), this.httpOptions).pipe(
       tap((message) => console.log(`added message from=${message.name}`))
     );}

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RestService} from "../rest.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {AuthService} from "../security/auth.service";
+import {RestService} from '../rest.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../security/auth.service';
 
 @Component({
   selector: 'app-add-comment',
@@ -23,10 +23,10 @@ export class AddCommentComponent implements OnInit{
     this.commentData.commentTimeStamp = new Date();
     this.discussionData['comments'].push(this.commentData);
     this.rest.updateDiscussion(this.discussionData).subscribe(res => {
-      console.log("Added comment without errors: ", res);
+      console.log('Added comment without errors: ', res);
       this.router.navigate(['/main']);
     }, (err) => {
-      console.log("Error Adding Comment: ", err);
+      console.log('Error Adding Comment: ', err);
       this.router.navigate(['/main']);
     });
   }

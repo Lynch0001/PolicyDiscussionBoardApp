@@ -1,6 +1,7 @@
 package com.lynch.dboard.service;
 
 import com.lynch.dboard.domain.Discussion;
+import com.lynch.dboard.domain.DiscussionHeader;
 import com.lynch.dboard.repository.DiscussionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +41,17 @@ public class DiscussionService {
   @Transactional(readOnly = true)
   public List<Discussion> findAll() {
     log.debug("Request to get all Discussions");
+    return discussionRepository.findAll();
+  }
+
+  /**
+   * Get all the discussions headers.
+   *
+   *
+   */
+  @Transactional(readOnly = true)
+  public List<Discussion> findAllDiscussionHeaders() {
+    log.debug("Request to get all Discussion Headers");
     return discussionRepository.findAll();
   }
 

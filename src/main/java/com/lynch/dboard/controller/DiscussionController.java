@@ -1,6 +1,7 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Discussion;
+import com.lynch.dboard.domain.DiscussionHeader;
 import com.lynch.dboard.service.DiscussionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,6 +60,18 @@ public class DiscussionController {
     log.debug("REST request to get a page of Discussions");
     return discussionService.findAll();
   }
+
+  /**
+   * {@code GET  /discussions} : get all the discussion headers ONLY.
+   *
+   * @param pageable the pagination information.
+   */
+  @GetMapping("/discussionheaders")
+  public List<Discussion> getAllDiscussionHeaders() {
+    log.debug("REST request to get a page of Discussion headers");
+    return discussionService.findAllDiscussionHeaders();
+  }
+
 
   /**
    * {@code GET  /discussions/:id} : get the "id" discussion.
