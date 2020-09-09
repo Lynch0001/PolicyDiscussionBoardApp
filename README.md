@@ -9,14 +9,13 @@
 
 
 <!-- PROJECT LOGO -->
-<!--  
+
 <br />
 <p align="center">
-  <a href="https://github.com/lynch0001/PolicyDiscussionBoardApp">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
--->
-  <h3 align="center">Policy Discussion Board</h3>
+    <img src="https://user-images.githubusercontent.com/35854692/92511210-03aca780-f1db-11ea-8fd2-342f8722f2a4.png" alt="Logo" width="577" height="433">
+
+
+  <h3 align="center">Foreign and Defense Policy Forum</h3>
 
   <p align="center">
     App to exchange views on foreign and defense policy matters
