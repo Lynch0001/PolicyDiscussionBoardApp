@@ -1,4 +1,4 @@
-
+<div>
 <header class="masthead" style="background-image: url(&quot;assets/img/united-nations-3760656_1920.jpg&quot;);">
   <div class="overlay"></div>
   <div class="container">
@@ -12,7 +12,7 @@
     </div>
   </div>
 </header>
-<article>
+<article *ngIf="discussion.id">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-8">
@@ -72,5 +72,5 @@
     </div>
   </div>
 </article>
-
+</div>
 <script src="assets/js/clean-blog.js"></script>

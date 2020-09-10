@@ -30,11 +30,11 @@ export class RegisterComponent implements OnInit {
       this.userUsernameList = data;
       console.log('Usernames retrieved: ', this.userUsernameList);
     })
-    console.log('Getting all emails');
+    // console.log('Getting all emails');
     this.userService.getAllUserEmails().subscribe((data: string[]) => {
       console.log('Register component - emails loading');
       this.userEmailList = data;
-      console.log('User Emails retrieved: ', this.userEmailList);
+      // console.log('User Emails retrieved: ', this.userEmailList);
     })
   }
 
