@@ -6,6 +6,7 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+![CodeFactor](https://www.codefactor.io/repository/github/Lynch0001/PolicyDiscussionBoardApp/badge?style=flat-square)
 
 
 <!-- PROJECT LOGO -->
