@@ -30,7 +30,7 @@ export class RestService {
   }
 
   getDiscussionHeaders(): Observable<any>{
-    return this.http.get(this.endpoint + 'discussionheaders').pipe(
+    return this.http.get(this.endpoint + 'discussion/headers').pipe(
       map(this.extractData));
   }
 

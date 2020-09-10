@@ -66,7 +66,7 @@ public class DiscussionController {
    *
    * @param pageable the pagination information.
    */
-  @GetMapping("/discussionheaders")
+  @GetMapping("/discussion/headers")
   public List<Discussion> getAllDiscussionHeaders() {
     log.debug("REST request to get a page of Discussion headers");
     return discussionService.findAllDiscussionHeaders();

@@ -15,12 +15,14 @@ export class ReviewComponent implements OnInit {
   showTags:any = [];
 
 
-  constructor(public rest : RestService, private route : ActivatedRoute, private router : Router, private auth:AuthService) { }
+  constructor(public rest : RestService, private route : ActivatedRoute, private router : Router, private auth:AuthService) {
+    console.log('Review component - constructor activated');
+  }
 
   ngOnInit() {
 
     console.log('Role of current user: ', this.auth.currentUserValue.roles);
-
+    console.log('Review Init - Call to rest - Id param: ', this.route.snapshot.params['id']);
     this.rest.getDiscussion(this.route.snapshot.params['id']).subscribe((data: {}) => {
       console.log('Review component - data loading');
       this.discussion = data;

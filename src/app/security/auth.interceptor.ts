@@ -12,24 +12,16 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler):Observable<HttpEvent<any>> {
 
-    console.log('Interceptor request: ', request);
+    // console.log('Interceptor request: ', request);
     const currentUser = this.authService.currentUserValue;
-    console.log('Interceptor request - currentUser: ', currentUser);
+    // console.log('Interceptor request - currentUser: ', currentUser);
     if(currentUser && currentUser.authdata) {
-
       request = request.clone({
         setHeaders: { 'authorization': 'Basic '+ currentUser.authdata
-
         }
       });
-
-    /*
-      'X-Requested-With': 'XMLHttpRequest',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'PUT, GET, POST, DELETE, OPTIONS'
-      */
     }
-    console.log('Interceptor request with header: ', request);
+    // console.log('Interceptor request with header: ', request);
     return next.handle(request);
   }
 }

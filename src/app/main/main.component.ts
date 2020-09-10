@@ -36,7 +36,8 @@ export class MainComponent implements OnInit {
       this.router.navigate(['home']);
     }
     else{
-      this.router.navigate(['review/', 'id']);
+      console.log('Id value: ' + id);
+      this.router.navigate(['review/', id]);
     }
   }
 

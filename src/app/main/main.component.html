@@ -15,7 +15,7 @@
   <div class="row">
     <div class="col-md-10 col-lg-8">
       <div class="post-preview" *ngFor="let discussion of discussions">
-        <a (click)="checkLoginAndRoute(discussion.id)" href="#">
+        <a (click)="checkLoginAndRoute(discussion.id)" href="review/{{discussion.id}}">
           <h2 class="post-title">{{discussion.discussTitle}}</h2>
           <h3 class="post-subtitle">{{discussion.discussSubTitle}}</h3>
         </a>
