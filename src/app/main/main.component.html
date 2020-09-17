@@ -29,7 +29,7 @@
 
         <button type="button" class="tag-button" *ngFor="let item of showTags | keyvalue">{{item.key}}:{{item.value}}</button>
 
-        <p class="post-meta">Posted by&nbsp;<a href="#">{{discussion.contributor}}</a> on {{discussion.discussTimestamp | date: 'short'}}</p>
+        <p class="post-meta">Posted by&nbsp;<a (click)="getByContributor(discussion.contributor)">{{discussion.contributor}}</a> on {{discussion.discussTimestamp | date: 'short'}}</p>
       </div>
       <hr>
 

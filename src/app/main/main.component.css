@@ -1,8 +1,9 @@
 .tag-button{
-  font-size: .5em;
+  font-size: .75em;
   border-radius: 4px;
   display: inline-block;
-  margin-left: 2em;
+  margin-left: 1.5em;
+  margin-bottom: .5em;
 }
 .buttons{
   display: inline-block;

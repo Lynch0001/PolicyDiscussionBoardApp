@@ -2,6 +2,7 @@ package com.lynch.dboard.service;
 
 import com.lynch.dboard.domain.Discussion;
 import com.lynch.dboard.domain.DiscussionHeader;
+import com.lynch.dboard.domain.Tag;
 import com.lynch.dboard.repository.DiscussionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,7 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Discussion;
-import com.lynch.dboard.domain.DiscussionHeader;
+import com.lynch.dboard.domain.Tag;
 import com.lynch.dboard.service.DiscussionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 /**
@@ -53,7 +55,7 @@ public class DiscussionController {
   /**
    * {@code GET  /discussions} : get all the discussions.
    *
-   * @param pageable the pagination information.
+   * // @param pageable the pagination information.
    */
   @GetMapping("/discussions")
   public List<Discussion> getAllDiscussions() {
@@ -62,9 +64,9 @@ public class DiscussionController {
   }
 
   /**
-   * {@code GET  /discussions} : get all the discussion headers ONLY.
+   * {@code GET  /discussion/headers} : get all the discussion headers ONLY.
    *
-   * @param pageable the pagination information.
+   * // @param pageable the pagination information.
    */
   @GetMapping("/discussion/headers")
   public List<Discussion> getAllDiscussionHeaders() {
@@ -85,9 +87,28 @@ public class DiscussionController {
   }
 
   /**
+   * {@code GET  /discussions/tag/:tag} : get discussions with "tag".
+   *
+   * @param tag is among tags in discussions to retrieve.
+   */
+  @GetMapping("/discussions/tag")
+  public List<Discussion> getDiscussionsByTag(@RequestParam String tag) {
+    log.debug("REST request to get Discussions with Tag : {}", tag);
+    List<Discussion> temp = discussionService.findAll();
+    return null;
+  }
+
+  @GetMapping("/discussions/contributor")
+  public List<Discussion> getDiscussionsByContributor(@RequestParam String contributorName) {
+    log.debug("REST request to get Discussions with Tag : {}", contributorName);
+    List<Discussion> temp = discussionService.findAll();
+    return temp.stream().filter(discussion -> discussion.getContributor().equals(contributorName)).collect(Collectors.toList());
+  }
+
+  /**
    * {@code DELETE  /discussions/:id} : delete the "id" discussion.
    *
-   * @param id the id of the discussion to delete.
+   * @param id is id of the discussion to delete.
    */
   @DeleteMapping("/discussions/{id}")
   public void deleteDiscussion(@PathVariable Long id) {

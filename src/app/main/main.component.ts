@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RestService} from '../rest.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../security/auth.service';
@@ -12,7 +12,9 @@ import {AuthService} from '../security/auth.service';
 export class MainComponent implements OnInit {
 
   showTags:any = [];
+  discussion:any;
   discussions: any = [];
+  name:string = '';
 
   constructor(public rest : RestService, private route : ActivatedRoute, private router : Router, private auth:AuthService) {
     console.log('Main component - activated constructor');
@@ -41,4 +43,20 @@ export class MainComponent implements OnInit {
     }
   }
 
+  getByContributor(name: string){
+    console.log('Main - get by contributor called.');
+    if(this.auth.currentUserValue == null){
+      alert('You must register and log in to view discussion content.');
+      this.router.navigate(['home']);
+    }
+    else{
+      console.log('Contributor value: ' + name);
+      this.rest.getDiscussionsByContributor(name).subscribe((data: {}) => {
+        console.log('Main component - data loading');
+        this.discussions = data;
+        this.showTags = this.discussions.tags;
+        console.log(data);
+      });
+    }
+  }
 }

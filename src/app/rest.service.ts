@@ -39,6 +39,12 @@ export class RestService {
       map(this.extractData));
   }
 
+  getDiscussionsByContributor(contributorName:string): Observable<any> {
+    let params = new HttpParams().append('contributorName', contributorName);
+    return this.http.get<any>(this.endpoint + 'discussions/contributor',{params:params}).pipe(
+      map(this.extractData));
+  }
+
   addDiscussion(discussion): Observable<any> {
     console.log(discussion);
     return this.http.post<any>(this.endpoint + 'discussions', JSON.stringify(discussion), this.httpOptions).pipe(

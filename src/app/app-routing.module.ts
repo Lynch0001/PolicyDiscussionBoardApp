@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'main', component: MainComponent},
   { path: 'main/reload', component: MainComponent},
   { path: 'review/:id', component: ReviewComponent, canActivate:[AuthGuard]},
+  { path: 'review/:contributor', component: ReviewComponent, canActivate:[AuthGuard]},
   { path: 'post', component: PostComponent, canActivate:[AuthGuard]},
   { path: 'admin-users-edit/:id', component: AdminUsersEditComponent},
   { path: 'about', component: AboutComponent},

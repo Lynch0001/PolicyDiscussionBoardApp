@@ -41,6 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers(HttpMethod.GET, "/messageTest").permitAll()
             .antMatchers( "/api/user").authenticated()
             .antMatchers(HttpMethod.GET, "/api/discussion/headers").permitAll()
+      .antMatchers( HttpMethod.GET,"/api/discussions/tag/**").hasAnyRole("USER", "ADMIN")
             .antMatchers( "/api/discussions/**").hasAnyRole("USER", "ADMIN")
             //.antMatchers( "/api/comments/**").hasAnyRole("USER", "ADMIN")
             //.antMatchers( "/api/tags/**").hasAnyRole("USER", "ADMIN")
