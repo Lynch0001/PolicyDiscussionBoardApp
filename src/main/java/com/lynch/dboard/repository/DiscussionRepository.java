@@ -11,4 +11,5 @@ import java.util.List;
 @Repository
 public interface DiscussionRepository extends JpaRepository<Discussion, Long> {
 
+  public List<Discussion> getAllByTagsContaining(Tag tag);
 }

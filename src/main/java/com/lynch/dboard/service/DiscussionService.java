@@ -4,6 +4,7 @@ import com.lynch.dboard.domain.Discussion;
 import com.lynch.dboard.domain.DiscussionHeader;
 import com.lynch.dboard.domain.Tag;
 import com.lynch.dboard.repository.DiscussionRepository;
+import com.lynch.dboard.repository.TagRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -18,11 +19,15 @@ public class DiscussionService {
 
   private final DiscussionRepository discussionRepository;
 
+  private final TagRepository tagRepository;
+
   private final Logger log = LoggerFactory.getLogger(DiscussionService.class);
 
-  public DiscussionService(DiscussionRepository discussionRepository) {
+  public DiscussionService(DiscussionRepository discussionRepository, TagRepository tagRepository) {
     this.discussionRepository = discussionRepository;
+    this.tagRepository = tagRepository;
   }
+
 
   /**
    * Save a discussion.
@@ -54,6 +59,18 @@ public class DiscussionService {
   public List<Discussion> findAllDiscussionHeaders() {
     log.debug("Request to get all Discussion Headers");
     return discussionRepository.findAll();
+  }
+
+  /**
+   * Get all the discussions headers.
+   *
+   *
+   */
+  @Transactional(readOnly = true)
+  public List<Discussion> findAllDiscussionsByTag(String tag) {
+    log.debug("Request to get all Discussions by Tag");
+    Tag requestedTag = tagRepository.getTagByTag(tag);
+    return discussionRepository.getAllByTagsContaining(requestedTag);
   }
 
   /**

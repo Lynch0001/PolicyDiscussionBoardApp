@@ -22,7 +22,7 @@
         <div class="row">
           <div class="tags" *ngFor="let tags of discussion.tags">
             <div *ngFor="let tag of tags | keyvalue">
-              <button type="button" class="tag-button" *ngIf="tag.key=='tag'">{{tag.value}}</button>
+              <button type="button" class="tag-button" (click)="getByTag(tag.value)" *ngIf="tag.key=='tag'">{{tag.value}}</button>
             </div>
           </div>
         </div>

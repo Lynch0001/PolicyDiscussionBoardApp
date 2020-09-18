@@ -59,4 +59,23 @@ export class MainComponent implements OnInit {
       });
     }
   }
+
+  getByTag(tag: string){
+    console.log('Main - get by tag called.');
+    if(this.auth.currentUserValue == null){
+      alert('You must register and log in to view discussion content.');
+      this.router.navigate(['home']);
+    }
+    else{
+      console.log('tag value: ' + tag);
+      this.rest.getDiscussionsByTag(tag).subscribe((data: {}) => {
+        console.log('Main component - data loading');
+        this.discussions = data;
+        this.showTags = this.discussions.tags;
+        console.log(data);
+      });
+    }
+  }
+
+
 }

@@ -7,9 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
@@ -94,8 +97,7 @@ public class DiscussionController {
   @GetMapping("/discussions/tag")
   public List<Discussion> getDiscussionsByTag(@RequestParam String tag) {
     log.debug("REST request to get Discussions with Tag : {}", tag);
-    List<Discussion> temp = discussionService.findAll();
-    return null;
+    return discussionService.findAllDiscussionsByTag(tag);
   }
 
   @GetMapping("/discussions/contributor")

@@ -45,6 +45,12 @@ export class RestService {
       map(this.extractData));
   }
 
+  getDiscussionsByTag(tag:string): Observable<any> {
+    let params = new HttpParams().append('tag', tag);
+    return this.http.get<any>(this.endpoint + 'discussions/tag',{params:params}).pipe(
+      map(this.extractData));
+  }
+
   addDiscussion(discussion): Observable<any> {
     console.log(discussion);
     return this.http.post<any>(this.endpoint + 'discussions', JSON.stringify(discussion), this.httpOptions).pipe(
