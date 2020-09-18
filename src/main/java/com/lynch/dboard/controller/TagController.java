@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 /**
@@ -55,9 +56,10 @@ public class TagController {
    * @param pageable the pagination information.
    */
   @GetMapping("/tags")
-  public List<Tag> getAllTags() {
+  public List<String> getAllTags() {
     log.debug("REST request to get a page of Tags");
-    return tagService.findAll();
+    List<Tag> temp = tagService.findAll();
+    return temp.stream().map(tag -> tag.getTag()).sorted().collect(Collectors.toList());
   }
 
   /**

@@ -29,6 +29,11 @@ export class RestService {
       map(this.extractData));
   }
 
+  getAllTags(): Observable<any>{
+    return this.http.get(this.endpoint + 'tags').pipe(
+      map(this.extractData));
+  }
+
   getDiscussionHeaders(): Observable<any>{
     return this.http.get(this.endpoint + 'discussion/headers').pipe(
       map(this.extractData));

@@ -1,4 +1,3 @@
-
 <header class="masthead" style="background-image: url(&quot;assets/img/typewriter-1031024_1920.jpg&quot;);">
   <div class="overlay"></div>
   <div class="container">
@@ -10,48 +9,52 @@
     </div>
   </div>
 </header>
-<div class="container">
+<div class="row">
+<div class="column container-left">
+  <div class="col-md-2 col-lg-4 mx-auto">
+    <div class="column-" *ngIf="allTags">
+      <div *ngFor="let tag of allTags">
+        <button class="tag-button" (click)="addTag(tag.toString())">{{tag.toString()}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column container-right">
   <div class="row">
     <div class="col-md-10 col-lg-8 mx-auto">
 
-      <p>Share you thoughts!</p>
+      <form id="postForm" #form='ngForm' name="sentPost" ngNativeValidate>
 
-        <form id="contactForm" #form='ngForm' name="sentMessage" ngNativeValidate>
-
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls">
-            <label>Title</label>
-            <input class="form-control" type="text" id="title" [(ngModel)]="discussionData.discussTitle" name="title" placeholder="Title" required>
-            </div>
-        </div>
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls">
-            <label>SubTitle</label>
-            <input class="form-control" type="text" id="subtitle" [(ngModel)]="discussionData.discussSubTitle" name="subtitle" placeholder="SubTitle" required>
-            </div>
+        <div class="form-group">
+          <label>Title</label>
+          <input class="form-control" type="text" id="title" #title="ngModel" name="title" [(ngModel)]="discussionData.discussTitle" required>
+          <small [hidden]="title.pristine || title.valid" class="form-text text-danger">Please fill out this field.</small>
         </div>
 
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls">
-            <label>Content</label>
-            <textarea class="form-control" type="text" id="content" [(ngModel)]="discussionData.discussContent" name="content" placeholder="Start your discussion here!" required></textarea>
-            </div>
+        <div class="form-group">
+          <label>SubTitle</label>
+          <input class="form-control" type="text" id="subtitle" #subtitle="ngModel" name="subtitle" [(ngModel)]="discussionData.discussSubTitle" required>
+          <small [hidden]="subtitle.pristine || subtitle.valid" class="form-text text-danger">Please fill out this field.</small>
         </div>
 
+        <div class="form-group">
+          <label for="content">Discussion</label>
+          <textarea class="form-control" rows="10" id="content" #content="ngModel" name="content" placeholder="Share you thoughts!" [(ngModel)]="discussionData.discussContent" required></textarea>
+          <small [hidden]="content.pristine || content.valid" class="form-text text-danger">Please fill out this field.</small>
+        </div>
 
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls mb-3">
-            <label>Tags</label>
-                <span class="new-tag-section" *ngFor="let tag of tempTags">
-                  <button class="tag-button">{{tag}}</button>
-                </span>
-              <br>
-              <div class="tag-section">
-                <input class="form-control col-6" id="tag" [(ngModel)]="tempTag" name="tag" maxlength="15" placeholder="Add one or more tags">
-                <button class="button btn-success btn-sm" (click)="addTag(tempTag)">Add</button>
-              </div>
+        <div class="form-group">
+          <label for="content">Tags</label>
+          <span class="new-tag-section" *ngFor="let tag of tempTags">
+              <button class="tag-button">{{tag}}</button>
+          </span>
+          <span>
+            <div class="row mx-auto">
+            <input class="form-control" type="text" id="tags" name="tag" placeholder="Select or add one or more tags" [(ngModel)]="tempTag">
 
+            <button class="button btn-success btn-sm" (click)="addTag(tempTag)">Add Tag</button>
             </div>
+          </span>
         </div>
 
         <div id="success"></div>
@@ -60,12 +63,7 @@
 
       </div>
   </div>
-    </div>
-
-
-
+</div>
+</div>
 <hr>
-
-
 <script src="assets/js/clean-blog.js"></script>
-

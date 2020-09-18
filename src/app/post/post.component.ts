@@ -11,6 +11,7 @@ import {AuthService} from '../security/auth.service';
 export class PostComponent implements OnInit {
 
   tempTag: String = '';
+  allTags:any = [];
   tempTags:any = [];
   @Input() discussionData:any = { id:'', discussTitle:'', discussSubTitle: '', tags: '', discussContent: '',
     discussTimestamp:'', contributor:''
@@ -19,6 +20,12 @@ export class PostComponent implements OnInit {
   constructor(public rest: RestService, private route: ActivatedRoute, private router: Router, private auth:AuthService) { }
 
   ngOnInit() {
+
+    this.rest.getAllTags().subscribe((data: {}) => {
+      console.log('Post component - getting Tag data');
+      this.allTags = data;
+    });
+
   }
 
 
@@ -42,12 +49,12 @@ export class PostComponent implements OnInit {
     });
   }
 
-  addTag(tag: String){
-    if(tag == null || tag == ''){
+  addTag(tempTag: String){
+    if(tempTag == null || tempTag == ''){
       alert('Please enter a subject tag for this post!');
       return;
     }
-    this.tempTags.push(tag);
+    this.tempTags.push(tempTag);
     this.tempTag='';
   }
 

@@ -16,4 +16,20 @@
 #tag{
   display:inline-block;
 }
+.column.container-left{
+  display: inline-block;
+  width:20%;
+}
+.column.container-right{
+  width:70%;
+}
+button{
+  margin-bottom: .5em;
+  position: relative;
+  top: .25em;
+}
+#tags{
+  width:70%;
+  margin-right: 2em;
+}
 
