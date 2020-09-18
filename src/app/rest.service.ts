@@ -69,6 +69,11 @@ export class RestService {
     );
   }
 
+  deleteComment(id:number): Observable<any> {
+    return this.http.delete<any>(this.endpoint + 'comments/' + id).pipe(
+      tap(_ => console.log(`deleted comment id=${id}`))
+    );
+  }
 
   getUser(credentials:any): Observable<any> {
     console.log('Rest Service received credentials: ', credentials);

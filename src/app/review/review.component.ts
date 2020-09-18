@@ -42,6 +42,16 @@ export class ReviewComponent implements OnInit {
       });
   }
 
+  deleteComment(id:number){
+    this.rest.deleteComment(id).subscribe(res => {
+      console.log('Deleted Comment without errors: ', res);
+      this.router.navigate(['main']);
+    }, (err) => {
+      console.log('Error Deleting Comment: ', err);
+      this.router.navigate(['main']);
+    });
+  }
+
   loadAddComponent(){
     this.addComponent=true;
   }

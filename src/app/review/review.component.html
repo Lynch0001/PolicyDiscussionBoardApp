@@ -18,7 +18,7 @@
       <div class="col-md-10 col-lg-8">
         <div class="post">
             <h2 class="post-title">{{discussion.discussTitle}}</h2>
-            <h3 class="post-subtitle">{{discussion.discussSubTitle}}</h3>
+            <h4 class="post-subtitle">{{discussion.discussSubTitle}}</h4>
           <div class="row">
             <div class="tags" *ngFor="let tag of showTags">
               <div *ngFor="let t of tag | keyvalue">
@@ -54,6 +54,9 @@
                 </div>
                 <div class="card-footer">
                   <p>Submitted by: {{comment.contributor}} on {{comment.commentTimeStamp | date: "medium"}}</p>
+                  <div class="post-comment-delete" *ngIf="auth.currentUserValue.roles=='ROLE_ADMIN'">
+                    <a class="btn btn-danger btn-sm" (click)="deleteComment(comment.id)"> delete </a>
+                  </div>
                 </div>
 
               </div>
