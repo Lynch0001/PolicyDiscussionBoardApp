@@ -59,7 +59,7 @@ public class TagController {
   public List<String> getAllTags() {
     log.debug("REST request to get a page of Tags");
     List<Tag> temp = tagService.findAll();
-    return temp.stream().map(tag -> tag.getTag()).sorted().collect(Collectors.toList());
+    return temp.stream().map(tag -> tag.getTag()).distinct().sorted().collect(Collectors.toList());
   }
 
   /**
@@ -79,9 +79,9 @@ public class TagController {
    * @param id the id of the tag to delete.
    */
   @DeleteMapping("/tags/{id}")
-  public void deleteTag(@PathVariable Tag tag) {
-    log.debug("REST request to delete Tag : {}", tag);
-    tagService.delete(tag);
+  public void deleteTag(@PathVariable Tag id) {
+    log.debug("REST request to delete Tag : {}", id);
+    tagService.delete(id);
   }
 }
 
