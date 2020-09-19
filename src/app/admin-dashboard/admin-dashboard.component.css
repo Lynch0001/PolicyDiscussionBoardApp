@@ -1,3 +1,9 @@
+.container{
+  border: red 1px dashed;
+}
+.row-buttons{
+  width: 100%;
+}
 
 .post-heading{
   color: red;

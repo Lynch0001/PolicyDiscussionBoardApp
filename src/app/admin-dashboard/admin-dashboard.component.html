@@ -11,15 +11,20 @@
 </header>
 
 <div class="container">
-  <div class="row">
+  <div class="row-buttons mx-auto" align="center">
     <button type="button" class="btn btn-sm btn-light" (click)="showOption=1">View Messages</button>
     <button type="button" class="btn btn-sm btn-light" (click)="showOption=2">Manage Users</button>
-    <button type="button" class="btn btn-sm btn-light" (click)="showMessages()">Manage Discussions</button>
-    <button type="button" class="btn btn-sm btn-light" (click)="showMessages()">Manage Comments</button>
-    <button type="button" class="btn btn-sm btn-light" (click)="showMessages()">Manage Tags</button>
-    <button type="button" class="btn btn-sm btn-light" (click)="showMessages()">Show Activity</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showOption=3">Manage Discussions</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showOption=4">Manage Comments</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showOption=5">Manage Tags</button>
+    <button type="button" class="btn btn-sm btn-light" (click)="showOption=6">Show Activity</button>
   </div>
+  <app-admin-messages *ngIf="showOption==1"></app-admin-messages>
+  <app-admin-users *ngIf="showOption==2"></app-admin-users>
+  <app-admin-discussion *ngIf="showOption==3"></app-admin-discussion>
+  <app-admin-comment *ngIf="showOption==4"></app-admin-comment>
+  <app-admin-tag *ngIf="showOption==5"></app-admin-tag>
+  <app-admin-activity *ngIf="showOption==6"></app-admin-activity>
 </div>
-<app-admin-messages *ngIf="showOption==1"></app-admin-messages>
-<app-admin-users *ngIf="showOption==2"></app-admin-users>
+
 
