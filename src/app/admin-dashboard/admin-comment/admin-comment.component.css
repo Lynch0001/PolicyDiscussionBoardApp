@@ -1,0 +1,13 @@
+table{
+  width: 100%;
+}
+
+.button.btn-outline-secondary{
+  display: inline-block;
+  float:right;
+  margin-right: 2em;
+}
+
+.button.btn-outline-danger{
+  float:right;
+}
