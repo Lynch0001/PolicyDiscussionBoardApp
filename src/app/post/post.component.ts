@@ -21,7 +21,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
 
-    this.rest.getAllTags().subscribe((data: {}) => {
+    this.rest.getAllTagNames().subscribe((data: {}) => {
       console.log('Post component - getting Tag data');
       this.allTags = data;
     });

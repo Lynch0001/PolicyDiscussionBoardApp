@@ -1,10 +1,10 @@
-
   <div class="container-lg">
   <div class="table table-small">
-    <table id="left-table">
+    <caption>Messages</caption>
+    <table id="message-table">
       <thead class="thead-dark">
       <tr>
-        <th scope="col">MessageId</th>
+        <th scope="col">Id</th>
         <th scope="col">From</th>
         <th scope="col">Email</th>
         <th scope="col">Date/Time</th>
@@ -32,7 +32,7 @@
       <table id="right-table">
         <thead class="thead-dark">
         <tr>
-          <th scope="colgroup">Message</th>
+          <th scope="colgroup">Message #{{this.messageData.id}}</th>
         </tr>
         </thead>
         <tbody>

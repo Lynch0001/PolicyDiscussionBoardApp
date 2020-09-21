@@ -51,12 +51,21 @@ public class TagController {
   }
 
   /**
-   * {@code GET  /tags} : get all the tags.
+   * {@code GET  /tags} : get all tag objects.
    *
-   * @param pageable the pagination information.
    */
   @GetMapping("/tags")
-  public List<String> getAllTags() {
+  public List<Tag> getAllTags() {
+    log.debug("REST request to get a page of Tags");
+    return tagService.findAll();
+  }
+
+  /**
+   * {@code GET  /tags} : get all tag names.
+   *
+   */
+  @GetMapping("/tags-names")
+  public List<String> getAllTagNames() {
     log.debug("REST request to get a page of Tags");
     List<Tag> temp = tagService.findAll();
     return temp.stream().map(tag -> tag.getTag()).distinct().sorted().collect(Collectors.toList());

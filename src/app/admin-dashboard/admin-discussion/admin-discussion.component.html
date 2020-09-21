@@ -1,0 +1,63 @@
+<div class="container-lg">
+  <div class="table table-small">
+    <caption>Discussions</caption>
+    <table id="discussion-table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">DiscussionId</th>
+        <th scope="col">Contributor</th>
+        <th scope="col">Title</th>
+        <th scope="col">Date/Time</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let discussion of discussions">
+        <td><a class="nav-link"  >{{discussion.id}}</a></td>
+        <td>{{discussion.contributor}}</td>
+        <td>{{discussion.discussTitle}}</td>
+        <td>{{discussion.discussTimestamp | date:'short'}}</td>
+        <td>
+          <div class="form-inline">
+            <button class="button btn-outline-secondary btn-sm" (click)="showSelectedDiscussion(discussion.id)">Read</button>
+            <button class="button btn-outline-danger btn-sm" (click)="deleteDiscussion(discussion.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table table-responsive table-small" *ngIf="showDiscussion==true">
+    <table id="right-table">
+      <thead class="thead-dark">
+      <tr>
+        <th colspan="2">Discussion #{{this.discussionData.id}}</th>
+      </tr>
+      </thead>
+      <tbody scope="column">
+      <tr>
+        <th scope="row">Contributor</th>
+        <td>{{this.discussionData.contributor}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Title</th>
+        <td>{{this.discussionData.discussTitle}}</td>
+      </tr>
+      <tr>
+        <th scope="row">SubTitle</th>
+        <td>{{this.discussionData.discussSubTitle}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Date/Time Posted</th>
+        <td>{{this.discussionData.discussTimestamp}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Content</th>
+        <td>{{this.discussionData.discussContent}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,53 @@
+<div class="container-lg">
+  <div class="table table-small">
+    <caption>Comments</caption>
+    <table id="comment-table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">CommentId</th>
+        <th scope="col">Contributor</th>
+        <th scope="col">Date/Time</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let comment of comments">
+        <td><a class="nav-link"  >{{comment.id}}</a></td>
+        <td>{{comment.contributor}}</td>
+        <td>{{comment.commentTimeStamp | date:'short'}}</td>
+        <td>
+          <div class="form-inline">
+            <button class="button btn-outline-secondary btn-sm" (click)="showSelectedComment(comment.id)">Read</button>
+            <button class="button btn-outline-danger btn-sm" (click)="deleteComment(comment.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table table-responsive table-small" *ngIf="showComment==true">
+    <table id="right-table">
+      <thead class="thead-dark">
+      <tr>
+        <th colspan="2">Comment #{{this.commentData.id}}</th>
+      </tr>
+      </thead>
+      <tbody scope="column">
+      <tr>
+        <th scope="row">Contributor</th>
+        <td>{{this.commentData.contributor}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Date/Time Posted</th>
+        <td>{{this.commentData.commentTimeStamp}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Content</th>
+        <td>{{this.commentData.commentContent}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
