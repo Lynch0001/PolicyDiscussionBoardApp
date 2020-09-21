@@ -1,1 +1,32 @@
-<p>admin-tag works!</p>
+<div class="container-lg">
+  <div class="table table-small">
+    <caption>Tags</caption>
+    <table id="tag-table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Tag</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tag of tags">
+          <td><a class="nav-link"  >{{tag.id}}</a></td>
+          <td>{{tag.tag}}</td>
+          <td>
+            <div class="form-inline">
+              <button class="button btn-outline-danger btn-sm" (click)="deleteTag(tag.id)">Delete</button>
+              <button class="button btn-outline-secondary btn-sm" (click)="showTag()">Edit</button>
+              <div class="edit-tag" [hidden]="hideTag">
+                <input type="text" [(ngModel)]="tag.tag">
+                <button class="button btn-outline-success btn-sm" (click)="editTag(tag)">Save</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+    </table>
+  </div>
+
+
+</div>

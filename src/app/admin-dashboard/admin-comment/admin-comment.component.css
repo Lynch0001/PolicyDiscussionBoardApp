@@ -2,12 +2,14 @@ table{
   width: 100%;
 }
 
-.button.btn-outline-secondary{
+.button.btn-outline-danger{
   display: inline-block;
   float:right;
   margin-right: 2em;
 }
-
-.button.btn-outline-danger{
+.button.btn-outline-secondary{
   float:right;
+  margin-right: 2em;
 }
+
+
