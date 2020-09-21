@@ -1,5 +1,6 @@
 package com.lynch.dboard.service;
 
+import com.lynch.dboard.domain.Comment;
 import com.lynch.dboard.domain.Discussion;
 import com.lynch.dboard.domain.DiscussionHeader;
 import com.lynch.dboard.domain.Tag;
@@ -13,7 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ * Service Implementation for managing {@link Discussion}.
+ */
 @Service
 public class DiscussionService {
 
@@ -28,7 +31,6 @@ public class DiscussionService {
     this.tagRepository = tagRepository;
   }
 
-
   /**
    * Save a discussion.
    *
@@ -42,7 +44,7 @@ public class DiscussionService {
   /**
    * Get all the discussions.
    *
-   * @param pageable the pagination information.
+   * @return list of all discussions.
    */
   @Transactional(readOnly = true)
   public List<Discussion> findAll() {
@@ -53,7 +55,7 @@ public class DiscussionService {
   /**
    * Get all the discussions headers.
    *
-   *
+   * @return list of all discussions.
    */
   @Transactional(readOnly = true)
   public List<Discussion> findAllDiscussionHeaders() {
@@ -62,9 +64,10 @@ public class DiscussionService {
   }
 
   /**
-   * Get all the discussions headers.
+   * Get all the discussions with specified tag.
    *
-   *
+   * @param tag for discussions.
+   * @return list of all discussions with specified tag.
    */
   @Transactional(readOnly = true)
   public List<Discussion> findAllDiscussionsByTag(String tag) {
@@ -76,7 +79,8 @@ public class DiscussionService {
   /**
    * Get one discussion by id.
    *
-   * @param id the id of the entity.
+   * @param id of the discussion.
+   * @return discussion with specified id.
    */
   @Transactional(readOnly = true)
   public Optional<Discussion> findOne(Long id) {
@@ -87,7 +91,7 @@ public class DiscussionService {
   /**
    * Delete the discussion by id.
    *
-   * @param id the id of the entity.
+   * @param id of the discussion.
    */
   public void delete(Long id) {
     log.debug("Request to delete Discussion : {}", id);

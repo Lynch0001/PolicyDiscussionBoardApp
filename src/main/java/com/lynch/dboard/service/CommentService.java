@@ -39,7 +39,7 @@ import java.util.Optional;
     }
 
     /**
-     * Get all the comments.
+     * Get all comments.
      *
      * @return the list of entities.
      */
@@ -62,9 +62,9 @@ import java.util.Optional;
     }
 
     /**
-     * Delete the comment by id.
+     * Delete comment by id.
      *
-     * @param id the id of the entity.
+     * @param id of the comment.
      */
     public void delete(Long id) {
       log.debug("Request to delete Comment : {}", id);

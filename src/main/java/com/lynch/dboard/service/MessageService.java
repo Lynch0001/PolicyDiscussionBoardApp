@@ -36,7 +36,7 @@ public class MessageService {
   /**
    * Get all the messages.
    *
-   * @param pageable the pagination information.
+   * @return list of messages.
    */
   @Transactional(readOnly = true)
   public List<Message> findAll() {
@@ -48,6 +48,7 @@ public class MessageService {
    * Get one message by id.
    *
    * @param id the id of the entity.
+   * @return message with specified id.
    */
   @Transactional(readOnly = true)
   public Optional<Message> findOne(Long id) {
