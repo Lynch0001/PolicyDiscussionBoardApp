@@ -34,6 +34,27 @@ export class RestService {
       map(this.extractData));
   }
 
+  getAllTagNames(): Observable<any>{
+    return this.http.get(this.endpoint + 'tags-names').pipe(
+      map(this.extractData));
+  }
+
+  deleteTag(id:number): Observable<any> {
+    return this.http.delete<any>(this.endpoint + 'tags/' + id).pipe(
+      tap(_ => console.log(`deleted tag id=${id}`))
+    );
+  }
+
+  editTag(tag): Observable<any> {
+    return this.http.put<any>(this.endpoint + 'tags/', JSON.stringify(tag), this.httpOptions).pipe(
+      tap((tag) => console.log(`updated tag name=${tag.tag}`))
+    );}
+
+  getAllComments(): Observable<any>{
+    return this.http.get(this.endpoint + 'comments').pipe(
+      map(this.extractData));
+  }
+
   getDiscussionHeaders(): Observable<any>{
     return this.http.get(this.endpoint + 'discussion/headers').pipe(
       map(this.extractData));

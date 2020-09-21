@@ -35,6 +35,9 @@ import { AdminMessagesComponent } from './admin-dashboard/admin-messages/admin-m
 import { AdminActivityComponent } from './admin-dashboard/admin-activity/admin-activity.component';
 import { AdminUsersComponent } from './admin-dashboard/admin-users/admin-users.component';
 import { AdminUsersEditComponent } from './admin-dashboard/admin-users-edit/admin-users-edit.component';
+import { AdminDiscussionComponent } from './admin-dashboard/admin-discussion/admin-discussion.component';
+import { AdminCommentComponent } from './admin-dashboard/admin-comment/admin-comment.component';
+import { AdminTagComponent } from './admin-dashboard/admin-tag/admin-tag.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,10 @@ import { AdminUsersEditComponent } from './admin-dashboard/admin-users-edit/admi
     AdminMessagesComponent,
     AdminActivityComponent,
     AdminUsersComponent,
-    AdminUsersEditComponent
+    AdminUsersEditComponent,
+    AdminDiscussionComponent,
+    AdminCommentComponent,
+    AdminTagComponent
   ],
   imports: [
     BrowserModule,
