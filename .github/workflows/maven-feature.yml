@@ -26,11 +26,10 @@ jobs:
         with:
           java-version: 1.8
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
+        run: org.sonarsource.scanner.maven:sonar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: org.sonarsource.scanner.maven:sonar
       - name: Compile with Maven
         run: mvn compile
       - name: Verify MySQL connection from host
