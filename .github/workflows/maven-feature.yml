@@ -2,9 +2,8 @@ name: Feature Branch
 
 on:
   push:
-    branches-ignore:
+    branches:
       - 'master'
-      - 'release*'
 
 jobs:
 
@@ -26,6 +25,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Compile with Maven
         run: mvn compile
       - name: Verify MySQL connection from host
