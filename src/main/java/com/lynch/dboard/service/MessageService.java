@@ -26,7 +26,7 @@ public class MessageService {
    * @param message the entity to save.
    */
   public void save(Message message) throws NullPointerException{
-    if(message.getName() == null || message.getName().isEmpty() || message.getEmail() == null || message.getEmail().isEmpty() || message.getEmail() == null || message.getEmail().isEmpty()){
+    if(message.getName() == null || message.getName().isEmpty() || message.getEmail() == null || message.getEmail().isEmpty() || message.getMessage() == null || message.getMessage().isEmpty()){
       throw new NullPointerException("INPUT ERROR - Unexpected null inputs in submitted MESSAGE");
     }
     log.debug("Request to save Discussion : {}", message);
