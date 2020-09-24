@@ -1,7 +1,7 @@
 <div class="container-lg">
   <div class="table table-small">
-    <caption>Comments</caption>
     <table id="comment-table">
+      <caption>Comments</caption>
       <thead class="thead-dark">
       <tr>
         <th scope="col">CommentId</th>
@@ -28,9 +28,10 @@
 
   <div class="table table-responsive table-small" *ngIf="showComment==true">
     <table id="right-table">
+      <caption>Display Comment #{{this.commentData.id}}</caption>
       <thead class="thead-dark">
-      <tr>
-        <th colspan="2">Comment #{{this.commentData.id}}</th>
+      <tr scope="row">
+        <th colspan="2">Comment</th>
       </tr>
       </thead>
       <tbody scope="column">

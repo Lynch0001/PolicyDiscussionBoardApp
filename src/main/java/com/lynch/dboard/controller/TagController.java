@@ -68,7 +68,7 @@ public class TagController {
   public List<String> getAllTagNames() {
     log.debug("REST request to get a page of Tags");
     List<Tag> temp = tagService.findAll();
-    return temp.stream().map(tag -> tag.getTag()).distinct().sorted().collect(Collectors.toList());
+    return temp.stream().map(Tag::getTag).distinct().sorted().collect(Collectors.toList());
   }
 
   /**

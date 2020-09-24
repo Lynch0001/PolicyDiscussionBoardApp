@@ -1,18 +1,18 @@
 
-INSERT INTO dboarddb.comment (id, comment_content, comment_timestamp, contributor)
+INSERT INTO comment (id, comment_content, comment_timestamp, contributor)
 VALUES (1, 'comment c1', '2020-06-12 15:25:04.035000', 'Jane Doe');
 
-INSERT INTO dboarddb.comment (id, comment_content, comment_timestamp, contributor)
+INSERT INTO comment (id, comment_content, comment_timestamp, contributor)
 VALUES (2, 'comment c2', '2020-06-12 15:25:04.035000', 'Jane Doe');
 
-INSERT INTO dboarddb.comment (id, comment_content, comment_timestamp, contributor)
+INSERT INTO comment (id, comment_content, comment_timestamp, contributor)
 VALUES (3, 'comment c3', '2020-06-12 15:25:04.035000', 'Jane Doe');
 
-INSERT INTO dboarddb.comment (id, comment_content, comment_timestamp, contributor)
+INSERT INTO comment (id, comment_content, comment_timestamp, contributor)
 VALUES (4, 'comment on c4', '2020-06-12 15:25:04.035000', ' Jane Doe');
 
 INSERT INTO
-    dboarddb.tags (id, tag)
+    tags (id, tag)
 VALUES
 (1, 'Russia'),
 (2, 'Venezuela'),
@@ -25,7 +25,7 @@ VALUES
 (9, 'Climate Change'),
 (10, 'Mulilateralism');
 
-INSERT INTO dboarddb.discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
+INSERT INTO discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
 VALUES (1, '2020-06-12 15:25:04.035000', 'Getting Turkey Back On Side', 'Resetting US-NATO Relations', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus libero pulvinar, fermentum metus quis, finibus augue. Duis id imperdiet metus, dictum laoreet mi. Donec egestas semper ipsum, et semper metus aliquet tempor. Praesent at mattis sem, vitae venenatis arcu. Donec sollicitudin sem ut felis ultricies mattis. Nullam ut aliquam ipsum. Mauris ut aliquam massa, vel molestie diam. Morbi sodales convallis odio, non auctor urna ullamcorper ac. Integer luctus mauris in ex lobortis, non tristique purus volutpat. Aliquam accumsan dui vel bibendum gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris dapibus massa nec leo interdum cursus. Etiam sapien velit, malesuada sit amet mattis non, faucibus non dolor. Mauris eget euismod quam, vel scelerisque nunc. Cras elementum suscipit nibh a accumsan. Curabitur pretium vulputate pellentesque.
 
 Vestibulum egestas neque arcu, et dictum quam imperdiet nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In lectus mi, tempor eget sem at, rutrum vehicula tellus. Curabitur nisl mi, venenatis vitae tempor ac, efficitur in ligula. Etiam egestas sem quis dignissim finibus. Sed nulla leo, convallis sit amet lectus mattis, volutpat lobortis metus. Praesent nec urna ac augue tempor gravida. Sed ligula dui, ultrices ac risus quis, suscipit convallis quam. Nullam erat massa, maximus id rutrum sit amet, tincidunt a felis. Nunc vitae placerat urna, non gravida magna. Nam blandit, quam eget dignissim rhoncus, urna diam cursus risus, et lacinia diam sem et lectus. Donec pulvinar tincidunt mauris non placerat. Integer pharetra blandit arcu et tincidunt. Aenean nec sapien vitae mi mollis lobortis consectetur nec odio. Aliquam cursus faucibus fermentum.
@@ -37,7 +37,7 @@ Maecenas convallis, mauris vel laoreet ullamcorper, elit libero tincidunt orci, 
 Pellentesque gravida tempor ipsum vel placerat. Fusce bibendum diam leo, sit amet hendrerit leo placerat ac. Ut a mi scelerisque nisl vulputate convallis nec sed augue. Integer a elit luctus massa placerat rutrum. Duis ut massa ac ante pulvinar facilisis id in elit. Maecenas consectetur justo nec egestas euismod. Aenean elementum id nisi ut convallis. Maecenas eu pellentesque purus. Ut porta convallis leo at fringilla. Nunc bibendum massa cursus nisl volutpat, at ultrices erat dignissim. Duis quis neque nulla.', 'John Doe');
 
 
-INSERT INTO dboarddb.discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
+INSERT INTO discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
 VALUES (2, '2020-06-12 15:25:04.035000', 'Preventing Collapse', 'Assisting Venezuelan Stabilization ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus libero pulvinar, fermentum metus quis, finibus augue. Duis id imperdiet metus, dictum laoreet mi. Donec egestas semper ipsum, et semper metus aliquet tempor. Praesent at mattis sem, vitae venenatis arcu. Donec sollicitudin sem ut felis ultricies mattis. Nullam ut aliquam ipsum. Mauris ut aliquam massa, vel molestie diam. Morbi sodales convallis odio, non auctor urna ullamcorper ac. Integer luctus mauris in ex lobortis, non tristique purus volutpat. Aliquam accumsan dui vel bibendum gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris dapibus massa nec leo interdum cursus. Etiam sapien velit, malesuada sit amet mattis non, faucibus non dolor. Mauris eget euismod quam, vel scelerisque nunc. Cras elementum suscipit nibh a accumsan. Curabitur pretium vulputate pellentesque.
 
 Vestibulum egestas neque arcu, et dictum quam imperdiet nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In lectus mi, tempor eget sem at, rutrum vehicula tellus. Curabitur nisl mi, venenatis vitae tempor ac, efficitur in ligula. Etiam egestas sem quis dignissim finibus. Sed nulla leo, convallis sit amet lectus mattis, volutpat lobortis metus. Praesent nec urna ac augue tempor gravida. Sed ligula dui, ultrices ac risus quis, suscipit convallis quam. Nullam erat massa, maximus id rutrum sit amet, tincidunt a felis. Nunc vitae placerat urna, non gravida magna. Nam blandit, quam eget dignissim rhoncus, urna diam cursus risus, et lacinia diam sem et lectus. Donec pulvinar tincidunt mauris non placerat. Integer pharetra blandit arcu et tincidunt. Aenean nec sapien vitae mi mollis lobortis consectetur nec odio. Aliquam cursus faucibus fermentum.
@@ -49,7 +49,7 @@ Maecenas convallis, mauris vel laoreet ullamcorper, elit libero tincidunt orci, 
 Pellentesque gravida tempor ipsum vel placerat. Fusce bibendum diam leo, sit amet hendrerit leo placerat ac. Ut a mi scelerisque nisl vulputate convallis nec sed augue. Integer a elit luctus massa placerat rutrum. Duis ut massa ac ante pulvinar facilisis id in elit. Maecenas consectetur justo nec egestas euismod. Aenean elementum id nisi ut convallis. Maecenas eu pellentesque purus. Ut porta convallis leo at fringilla. Nunc bibendum massa cursus nisl volutpat, at ultrices erat dignissim. Duis quis neque nulla.', 'James Smith');
 
 
-INSERT INTO dboarddb.discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
+INSERT INTO discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
 VALUES (3, '2020-06-12 15:25:04.035000', 'A New Cold War', 'Confronting a Hostile Russia', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus libero pulvinar, fermentum metus quis, finibus augue. Duis id imperdiet metus, dictum laoreet mi. Donec egestas semper ipsum, et semper metus aliquet tempor. Praesent at mattis sem, vitae venenatis arcu. Donec sollicitudin sem ut felis ultricies mattis. Nullam ut aliquam ipsum. Mauris ut aliquam massa, vel molestie diam. Morbi sodales convallis odio, non auctor urna ullamcorper ac. Integer luctus mauris in ex lobortis, non tristique purus volutpat. Aliquam accumsan dui vel bibendum gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris dapibus massa nec leo interdum cursus. Etiam sapien velit, malesuada sit amet mattis non, faucibus non dolor. Mauris eget euismod quam, vel scelerisque nunc. Cras elementum suscipit nibh a accumsan. Curabitur pretium vulputate pellentesque.
 
 Vestibulum egestas neque arcu, et dictum quam imperdiet nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In lectus mi, tempor eget sem at, rutrum vehicula tellus. Curabitur nisl mi, venenatis vitae tempor ac, efficitur in ligula. Etiam egestas sem quis dignissim finibus. Sed nulla leo, convallis sit amet lectus mattis, volutpat lobortis metus. Praesent nec urna ac augue tempor gravida. Sed ligula dui, ultrices ac risus quis, suscipit convallis quam. Nullam erat massa, maximus id rutrum sit amet, tincidunt a felis. Nunc vitae placerat urna, non gravida magna. Nam blandit, quam eget dignissim rhoncus, urna diam cursus risus, et lacinia diam sem et lectus. Donec pulvinar tincidunt mauris non placerat. Integer pharetra blandit arcu et tincidunt. Aenean nec sapien vitae mi mollis lobortis consectetur nec odio. Aliquam cursus faucibus fermentum.
@@ -60,7 +60,7 @@ Maecenas convallis, mauris vel laoreet ullamcorper, elit libero tincidunt orci, 
 
 Pellentesque gravida tempor ipsum vel placerat. Fusce bibendum diam leo, sit amet hendrerit leo placerat ac. Ut a mi scelerisque nisl vulputate convallis nec sed augue. Integer a elit luctus massa placerat rutrum. Duis ut massa ac ante pulvinar facilisis id in elit. Maecenas consectetur justo nec egestas euismod. Aenean elementum id nisi ut convallis. Maecenas eu pellentesque purus. Ut porta convallis leo at fringilla. Nunc bibendum massa cursus nisl volutpat, at ultrices erat dignissim. Duis quis neque nulla.', 'Jane Doe');
 
-INSERT INTO dboarddb.discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
+INSERT INTO discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
 VALUES (4, '2020-07-16 15:25:04.035000', 'Planning for Future Mass Migrations', 'Lessons from the Syria Exodus', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus libero pulvinar, fermentum metus quis, finibus augue. Duis id imperdiet metus, dictum laoreet mi. Donec egestas semper ipsum, et semper metus aliquet tempor. Praesent at mattis sem, vitae venenatis arcu. Donec sollicitudin sem ut felis ultricies mattis. Nullam ut aliquam ipsum. Mauris ut aliquam massa, vel molestie diam. Morbi sodales convallis odio, non auctor urna ullamcorper ac. Integer luctus mauris in ex lobortis, non tristique purus volutpat. Aliquam accumsan dui vel bibendum gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris dapibus massa nec leo interdum cursus. Etiam sapien velit, malesuada sit amet mattis non, faucibus non dolor. Mauris eget euismod quam, vel scelerisque nunc. Cras elementum suscipit nibh a accumsan. Curabitur pretium vulputate pellentesque.
 
 Vestibulum egestas neque arcu, et dictum quam imperdiet nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In lectus mi, tempor eget sem at, rutrum vehicula tellus. Curabitur nisl mi, venenatis vitae tempor ac, efficitur in ligula. Etiam egestas sem quis dignissim finibus. Sed nulla leo, convallis sit amet lectus mattis, volutpat lobortis metus. Praesent nec urna ac augue tempor gravida. Sed ligula dui, ultrices ac risus quis, suscipit convallis quam. Nullam erat massa, maximus id rutrum sit amet, tincidunt a felis. Nunc vitae placerat urna, non gravida magna. Nam blandit, quam eget dignissim rhoncus, urna diam cursus risus, et lacinia diam sem et lectus. Donec pulvinar tincidunt mauris non placerat. Integer pharetra blandit arcu et tincidunt. Aenean nec sapien vitae mi mollis lobortis consectetur nec odio. Aliquam cursus faucibus fermentum.
@@ -72,7 +72,7 @@ Maecenas convallis, mauris vel laoreet ullamcorper, elit libero tincidunt orci, 
 Pellentesque gravida tempor ipsum vel placerat. Fusce bibendum diam leo, sit amet hendrerit leo placerat ac. Ut a mi scelerisque nisl vulputate convallis nec sed augue. Integer a elit luctus massa placerat rutrum. Duis ut massa ac ante pulvinar facilisis id in elit. Maecenas consectetur justo nec egestas euismod. Aenean elementum id nisi ut convallis. Maecenas eu pellentesque purus. Ut porta convallis leo at fringilla. Nunc bibendum massa cursus nisl volutpat, at ultrices erat dignissim. Duis quis neque nulla.', 'Jane Doe');
 
 
-INSERT INTO dboarddb.discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
+INSERT INTO discussion (id, discuss_timestamp, discuss_title, discuss_subtitle, discuss_content, contributor)
 VALUES (5, '2020-08-22 15:25:04.035000', 'Reviving the Paris Agreement', 'Addressing the Undeniable', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus libero pulvinar, fermentum metus quis, finibus augue. Duis id imperdiet metus, dictum laoreet mi. Donec egestas semper ipsum, et semper metus aliquet tempor. Praesent at mattis sem, vitae venenatis arcu. Donec sollicitudin sem ut felis ultricies mattis. Nullam ut aliquam ipsum. Mauris ut aliquam massa, vel molestie diam. Morbi sodales convallis odio, non auctor urna ullamcorper ac. Integer luctus mauris in ex lobortis, non tristique purus volutpat. Aliquam accumsan dui vel bibendum gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris dapibus massa nec leo interdum cursus. Etiam sapien velit, malesuada sit amet mattis non, faucibus non dolor. Mauris eget euismod quam, vel scelerisque nunc. Cras elementum suscipit nibh a accumsan. Curabitur pretium vulputate pellentesque.
 
 Vestibulum egestas neque arcu, et dictum quam imperdiet nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In lectus mi, tempor eget sem at, rutrum vehicula tellus. Curabitur nisl mi, venenatis vitae tempor ac, efficitur in ligula. Etiam egestas sem quis dignissim finibus. Sed nulla leo, convallis sit amet lectus mattis, volutpat lobortis metus. Praesent nec urna ac augue tempor gravida. Sed ligula dui, ultrices ac risus quis, suscipit convallis quam. Nullam erat massa, maximus id rutrum sit amet, tincidunt a felis. Nunc vitae placerat urna, non gravida magna. Nam blandit, quam eget dignissim rhoncus, urna diam cursus risus, et lacinia diam sem et lectus. Donec pulvinar tincidunt mauris non placerat. Integer pharetra blandit arcu et tincidunt. Aenean nec sapien vitae mi mollis lobortis consectetur nec odio. Aliquam cursus faucibus fermentum.
@@ -86,7 +86,7 @@ Pellentesque gravida tempor ipsum vel placerat. Fusce bibendum diam leo, sit ame
 
 
 INSERT INTO
-    dboarddb.discussion_tags (discussion_id, tags_id)
+    discussion_tags (discussion_id, tags_id)
 VALUES
 (1, 6),
 (1, 5),
@@ -100,7 +100,7 @@ VALUES
 (5,9);
 
 INSERT INTO
-    dboarddb.discussion_comments (discussion_id, comments_id)
+    discussion_comments (discussion_id, comments_id)
 VALUES
 (1, 1),
 (1, 2),
@@ -109,7 +109,7 @@ VALUES
 
 
 INSERT INTO
-    dboarddb.role (id, role)
+    role (id, role)
 VALUES
        (1, 'ADMIN'),
        (2, 'USER'),
@@ -118,7 +118,7 @@ VALUES
 
 
 INSERT INTO
-    dboarddb.messages (email, message_content, message_timestamp, name, message_is_read)
+    messages (email, message_content, message_timestamp, name, message_is_read)
 VALUES
        ('Jane.Doe@mail.net', 'message 1 content', '2020-06-12 15:25:04.035000', 'Jane Doe', false),
        ('John.Doe@mail.net', 'message 2 content', '2020-06-12 15:25:04.035000', 'John Doe', true),

@@ -1,7 +1,9 @@
 table{
   width: 100%;
 }
-
+caption{
+  caption-side: top;
+}
 .button.btn-outline-secondary{
   display: inline-block;
   float:right;
