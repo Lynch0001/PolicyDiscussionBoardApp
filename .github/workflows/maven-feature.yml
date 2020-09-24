@@ -1,4 +1,4 @@
-name: Feature Branch
+name: CI-Master
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
         run: >
           mvn clean verify
           sonar:sonar
-          -Dsonar.sources=src
+          -Dsonar.sources=src/app,src/main
           -Dsonar.exclusions=src/test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
