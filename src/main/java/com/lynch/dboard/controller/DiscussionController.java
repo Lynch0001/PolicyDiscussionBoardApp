@@ -1,16 +1,15 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Discussion;
-import com.lynch.dboard.domain.Tag;
+import com.lynch.dboard.domain.DiscussionDto;
 import com.lynch.dboard.service.DiscussionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-
 import java.util.stream.Collectors;
 
 
@@ -34,22 +33,26 @@ public class DiscussionController {
   /**
    * {@code POST  /discussions} : Create a new discussion.
    *
-   * @param discussion the discussion to create.
+   * @param discussionDto the discussion to create.
    */
   @PostMapping("/discussions")
-  public void createDiscussion(@RequestBody Discussion discussion) {
-    log.debug("REST request to save Discussion : {}", discussion);
+  public void createDiscussion(@RequestBody DiscussionDto discussionDto) {
+    log.debug("REST request to save Discussion : {}", discussionDto);
+    Discussion discussion = new Discussion();
+    BeanUtils.copyProperties(discussionDto, discussion);
     discussionService.save(discussion);
   }
 
   /**
    * {@code PUT  /discussions} : Updates an existing discussion.
    *
-   * @param discussion the discussion to update.
+   * @param discussionDto the discussion to update.
    */
   @PutMapping("/discussions")
-  public void updateDiscussion(@RequestBody Discussion discussion) {
-    log.debug("REST request to update Discussion : {}", discussion);
+  public void updateDiscussion(@RequestBody DiscussionDto discussionDto) {
+    log.debug("REST request to update Discussion : {}", discussionDto);
+    Discussion discussion = new Discussion();
+    BeanUtils.copyProperties(discussionDto, discussion);
     discussionService.save(discussion);
   }
 

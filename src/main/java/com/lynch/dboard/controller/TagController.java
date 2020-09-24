@@ -1,10 +1,12 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Tag;
+import com.lynch.dboard.domain.TagDto;
 import com.lynch.dboard.service.TagService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,22 +33,26 @@ public class TagController {
   /**
    * {@code POST  /tags} : Create a new tag.
    *
-   * @param tag the tag to create.
+   * @param tagDto the tag to create.
    */
   @PostMapping("/tags")
-  public void createTag(@RequestBody Tag tag) {
-    log.debug("REST request to save Tag : {}", tag);
+  public void createTag(@RequestBody TagDto tagDto) {
+    log.debug("REST request to save Tag : {}", tagDto);
+    Tag tag = new Tag();
+    BeanUtils.copyProperties(tagDto, tag);
     tagService.create(tag);
   }
 
   /**
    * {@code PUT  /tags} : Updates an existing tag.
    *
-   * @param tag the tag to update.
+   * @param tagDto the tag to update.
    */
   @PutMapping("/tags")
-  public void updateTag(@RequestBody Tag tag) {
-    log.debug("REST request to update Tag : {}", tag);
+  public void updateTag(@RequestBody TagDto tagDto) {
+    log.debug("REST request to update Tag : {}", tagDto);
+    Tag tag = new Tag();
+    BeanUtils.copyProperties(tagDto, tag);
     tagService.update(tag);
   }
 
