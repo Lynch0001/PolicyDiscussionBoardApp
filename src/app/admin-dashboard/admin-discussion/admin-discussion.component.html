@@ -1,7 +1,7 @@
 <div class="container-lg">
   <div class="table table-small">
-    <caption>Discussions</caption>
     <table id="discussion-table">
+      <caption>Discussions</caption>
       <thead class="thead-dark">
       <tr>
         <th scope="col">DiscussionId</th>
@@ -30,9 +30,10 @@
 
   <div class="table table-responsive table-small" *ngIf="showDiscussion==true">
     <table id="right-table">
+      <caption>Display Discussion #{{this.discussionData.id}}</caption>
       <thead class="thead-dark">
-      <tr>
-        <th colspan="2">Discussion #{{this.discussionData.id}}</th>
+      <tr scope="row">
+        <th colspan="2">Discussion</th>
       </tr>
       </thead>
       <tbody scope="column">
