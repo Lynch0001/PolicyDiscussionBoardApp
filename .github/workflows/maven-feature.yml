@@ -26,7 +26,7 @@ jobs:
         with:
           java-version: 1.8
       - name: SonarCloud Scan
-        run: org.sonarsource.scanner.maven:sonar
+        run: mvn clean verify sonar:sonar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
