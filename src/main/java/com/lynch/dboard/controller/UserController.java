@@ -1,6 +1,7 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.User;
+import com.lynch.dboard.domain.UserDto;
 import com.lynch.dboard.repository.UserRepository;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -52,14 +54,18 @@ public class UserController {
   }
 
   @PostMapping("/users/register")
-  public void createUser(@RequestBody User user) {
-    log.debug("Creating User: ", user);
+  public void createUser(@RequestBody UserDto userDto) {
+    log.debug("Creating User: ", userDto);
+    User user = new User();
+    BeanUtils.copyProperties(userDto, user);
     userRepository.save(user);
   }
 
   @PutMapping("/users")
-  public void updateUser(@RequestBody User user) {
-    log.debug("Updating User: ", user);
+  public void updateUser(@RequestBody UserDto userDto) {
+    log.debug("Updating User: ", userDto);
+    User user = new User();
+    BeanUtils.copyProperties(userDto, user);
     userRepository.save(user);
   }
 
