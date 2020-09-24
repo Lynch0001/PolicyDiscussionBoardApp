@@ -1,10 +1,12 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Comment;
+import com.lynch.dboard.domain.CommentDto;
 import com.lynch.dboard.service.CommentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,22 +30,26 @@ import java.util.Optional;
     /**
      * {@code POST  /comments} : Create a new comment.
      *
-     * @param comment the comment to create.
+     * @param commentDto the comment to create.
      */
     @PostMapping("/comments")
-    public void createComment(@RequestBody Comment comment) {
-      log.debug("REST request to save Comment : {}", comment);
+    public void createComment(@RequestBody CommentDto commentDto) {
+      log.debug("REST request to save Comment : {}", commentDto);
+      Comment comment = new Comment();
+      BeanUtils.copyProperties(commentDto, comment);
       commentService.save(comment);
     }
 
     /**
      * {@code PUT  /comments} : Updates an existing comment.
      *
-     * @param comment the comment to update.
+     * @param commentDto the comment to update.
      */
     @PutMapping("/comments")
-    public void updateComment(@RequestBody Comment comment) {
-      log.debug("REST request to update Comment : {}", comment);
+    public void updateComment(@RequestBody CommentDto commentDto) {
+      log.debug("REST request to update Comment : {}", commentDto);
+      Comment comment = new Comment();
+      BeanUtils.copyProperties(commentDto, comment);
       commentService.save(comment);
     }
 
@@ -80,4 +86,4 @@ import java.util.Optional;
       commentService.delete(id);
     }
   }
-  
+

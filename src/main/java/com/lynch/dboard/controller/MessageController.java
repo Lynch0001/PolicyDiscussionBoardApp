@@ -1,10 +1,13 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Message;
+import com.lynch.dboard.domain.MessageDto;
 import com.lynch.dboard.service.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -31,22 +34,26 @@ public class MessageController {
   /**
    * {@code POST  /messages} : Create a new message.
    *
-   * @param message the message to create.
+   * @param messageDto the message to create.
    */
   @PostMapping("/messages/send")
-  public void createMessage(@RequestBody Message message) {
-    log.debug("REST request to save Message : {}", message);
+  public void createMessage(@RequestBody MessageDto messageDto) {
+    log.debug("REST request to save Message : {}", messageDto);
+    Message message = new Message();
+    BeanUtils.copyProperties(messageDto, message);
     messageService.save(message);
   }
 
   /**
    * {@code PUT  /messages} : Updates an existing message.
    *
-   * @param message the message to update.
+   * @param messageDto the message to update.
    */
   @PutMapping("/messages")
-  public void updateMessage(@RequestBody Message message) {
-    log.debug("REST request to update Message : {}", message);
+  public void updateMessage(@RequestBody MessageDto messageDto) {
+    log.debug("REST request to update Message : {}", messageDto);
+    Message message = new Message();
+    BeanUtils.copyProperties(messageDto, message);
     messageService.save(message);
   }
 
