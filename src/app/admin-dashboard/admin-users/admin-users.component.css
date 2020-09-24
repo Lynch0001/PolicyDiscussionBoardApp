@@ -2,4 +2,6 @@
 table{
   width: 100%;
 }
-
+caption{
+  caption-side: top;
+}
