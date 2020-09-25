@@ -1,37 +1,39 @@
 package com.lynch.dboard.controller;
 
-import com.lynch.dboard.repository.MessageRepository;
 import com.lynch.dboard.service.MessageService;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(MessageController.class)
 class MessageControllerTest {
 
-  @Mock
-  private MessageRepository messageRepository;
+  @Autowired
+  private MockMvc mockMvc;
 
-  @InjectMocks
-  private MessageService messageService;
-
-  @BeforeEach
-  void setUp() {
-  }
-
-  @AfterEach
-  void tearDown() {
+  @Test
+  void greetingMessage() throws Exception {
+    RequestBuilder request = MockMvcRequestBuilders.get("/messageTest");
+    MvcResult result = mockMvc.perform(request).andReturn();
+    assertEquals("Hello, World", result.getResponse().getContentAsString());
   }
 
   @Test
-  void greetingMessage() {
-  }
+  void createMessage() throws Exception {
 
-  @Test
-  void createMessage() {
+
   }
 
   @Test

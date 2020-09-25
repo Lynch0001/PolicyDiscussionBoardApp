@@ -44,4 +44,6 @@ jobs:
         run: mvn test
       - name: Package with Maven
         run: mvn package
+      - name: Verify with Maven
+        run: mvn verify
 
