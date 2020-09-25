@@ -1,7 +1,7 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Comment;
-import com.lynch.dboard.domain.CommentDto;
+import com.lynch.dboard.transfer.CommentDto;
 import com.lynch.dboard.service.CommentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

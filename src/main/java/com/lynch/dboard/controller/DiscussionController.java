@@ -1,7 +1,7 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Discussion;
-import com.lynch.dboard.domain.DiscussionDto;
+import com.lynch.dboard.transfer.DiscussionDto;
 import com.lynch.dboard.service.DiscussionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

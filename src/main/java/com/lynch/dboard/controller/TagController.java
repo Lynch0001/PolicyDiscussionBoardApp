@@ -1,7 +1,7 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Tag;
-import com.lynch.dboard.domain.TagDto;
+import com.lynch.dboard.transfer.TagDto;
 import com.lynch.dboard.service.TagService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

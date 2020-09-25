@@ -1,7 +1,7 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.User;
-import com.lynch.dboard.domain.UserDto;
+import com.lynch.dboard.transfer.UserDto;
 import com.lynch.dboard.repository.UserRepository;
 import org.json.JSONObject;
 import org.slf4j.Logger;

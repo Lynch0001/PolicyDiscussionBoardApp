@@ -1,7 +1,7 @@
 package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Message;
-import com.lynch.dboard.domain.MessageDto;
+import com.lynch.dboard.transfer.MessageDto;
 import com.lynch.dboard.service.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

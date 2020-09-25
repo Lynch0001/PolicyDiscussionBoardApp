@@ -1,4 +1,4 @@
-package com.lynch.dboard.domain;
+package com.lynch.dboard.transfer;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

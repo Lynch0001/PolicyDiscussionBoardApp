@@ -1,6 +1,8 @@
-package com.lynch.dboard.domain;
+package com.lynch.dboard.transfer;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.lynch.dboard.domain.Comment;
+import com.lynch.dboard.domain.Tag;
 
 import javax.persistence.*;
 import java.io.Serializable;
