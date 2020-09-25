@@ -14,7 +14,7 @@ import java.util.Optional;
   /**
    * REST controller for managing {@link Comment}.
    */
-  @CrossOrigin
+  @CrossOrigin(origins = "http://localhost:4200")
   @RestController
   @RequestMapping("/api")
   public class CommentController {

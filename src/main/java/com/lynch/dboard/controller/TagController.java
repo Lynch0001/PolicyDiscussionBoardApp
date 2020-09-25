@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 /**
  * REST controller for managing {@link Tag}.
  */
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class TagController {
