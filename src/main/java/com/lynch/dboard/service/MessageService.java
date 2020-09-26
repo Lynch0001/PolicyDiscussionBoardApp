@@ -4,6 +4,7 @@ import com.lynch.dboard.domain.Message;
 import com.lynch.dboard.repository.MessageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,12 +26,13 @@ public class MessageService {
    *
    * @param message the entity to save.
    */
-  public void save(Message message) throws NullPointerException{
+  public ResponseEntity<Message> save(Message message) throws NullPointerException{
     if(message.getName() == null || message.getName().isEmpty() || message.getEmail() == null || message.getEmail().isEmpty() || message.getMessage() == null || message.getMessage().isEmpty()){
       throw new NullPointerException("INPUT ERROR - Unexpected null inputs in submitted MESSAGE");
     }
     log.debug("Request to save Discussion : {}", message);
-    messageRepository.save(message);
+    Message response = messageRepository.save(message);
+    return ResponseEntity.ok(response);
   }
 
   /**
@@ -48,6 +50,7 @@ public class MessageService {
    * Get one message by id.
    *
    * @param id the id of the entity.
+   * @return
    */
   @Transactional(readOnly = true)
   public Optional<Message> findOne(Long id) {

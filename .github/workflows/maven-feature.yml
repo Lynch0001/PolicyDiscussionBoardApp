@@ -42,6 +42,8 @@ jobs:
           mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uroot -pPa55word! -e "SHOW DATABASES"
       - name: Test with Maven
         run: mvn test
+      - name: Surefire Report from Maven
+        run: mvn surefire-report:report-only
       - name: Package with Maven
         run: mvn package -Dmaven.test.skip=true
       - name: Install with Maven

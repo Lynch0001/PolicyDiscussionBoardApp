@@ -72,6 +72,7 @@ public class MessageController {
    * {@code GET  /messages/:id} : get the "id" message.
    *
    * @param id the id of the message to retrieve.
+   * @return
    */
   @GetMapping("/messages/{id}")
   public Optional<Message> getMessage(@PathVariable Long id) {
