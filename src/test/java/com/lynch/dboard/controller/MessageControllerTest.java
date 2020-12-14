@@ -16,15 +16,23 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 
+import java.net.URI;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -49,7 +57,6 @@ class MessageControllerTest {
 
   @BeforeEach
   void setup(){
-
   }
 
   @Test
@@ -68,5 +75,41 @@ class MessageControllerTest {
   @Test
   void getAllMessages() {
     assertThat(this.restTemplate.getForObject("http://localhost:" + port + "api/messages",List.class)).hasSizeBetween(1,10);
+  }
+
+  @Test
+  void createMessage() {
+    MessageDto testMessageDto = new MessageDto();
+    testMessageDto.setEmail(TEST_USER_EMAIL);
+    testMessageDto.setName(TEST_USER_NAME);
+    testMessageDto.setMessage(TEST_USER_MESSAGE);
+    testMessageDto.setId(TEST_USER_ID);
+
+    final String baseUrl = "http://localhost:"+ port +"/messages/send";
+
+    // create headers
+    HttpHeaders headers = new HttpHeaders();
+    // set `content-type` header
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    // set `accept` header
+    headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+
+    HttpEntity<MessageDto> request = new HttpEntity<>(testMessageDto);
+    // build the request
+    HttpEntity<Map<MessageDto, Object>> entity = new HttpEntity<Map<MessageDto, Object>>(testMessageDto, headers);
+
+
+    ResponseEntity<String> result = restTemplate.postForEntity(baseUrl, request, String.class);
+
+    //Verify request succeed
+    assertEquals(201, result.getStatusCodeValue());
+  }
+
+  @Test
+  void updateMessage() {
+  }
+
+  @Test
+  void deleteMessage() {
   }
 }
