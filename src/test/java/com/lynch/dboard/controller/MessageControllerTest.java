@@ -78,34 +78,6 @@ class MessageControllerTest {
   }
 
   @Test
-  void createMessage() {
-    MessageDto testMessageDto = new MessageDto();
-    testMessageDto.setEmail(TEST_USER_EMAIL);
-    testMessageDto.setName(TEST_USER_NAME);
-    testMessageDto.setMessage(TEST_USER_MESSAGE);
-    testMessageDto.setId(TEST_USER_ID);
-
-    final String baseUrl = "http://localhost:"+ port +"/messages/send";
-
-    // create headers
-    HttpHeaders headers = new HttpHeaders();
-    // set `content-type` header
-    headers.setContentType(MediaType.APPLICATION_JSON);
-    // set `accept` header
-    headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-
-    HttpEntity<MessageDto> request = new HttpEntity<>(testMessageDto);
-    // build the request
-    HttpEntity<Map<MessageDto, Object>> entity = new HttpEntity<Map<MessageDto, Object>>(testMessageDto, headers);
-
-
-    ResponseEntity<String> result = restTemplate.postForEntity(baseUrl, request, String.class);
-
-    //Verify request succeed
-    assertEquals(201, result.getStatusCodeValue());
-  }
-
-  @Test
   void updateMessage() {
   }
 
