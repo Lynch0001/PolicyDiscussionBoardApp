@@ -2,6 +2,7 @@ package com.lynch.dboard.controller;
 
 import com.lynch.dboard.domain.Message;
 import com.lynch.dboard.service.AppUserDetailsService;
+import com.lynch.dboard.service.CommentService;
 import com.lynch.dboard.service.MessageService;
 import com.lynch.dboard.transfer.MessageDto;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,7 +39,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@WebMvcTest(controllers = MessageController.class)
 class MessageControllerTest {
 
   private final static Long TEST_USER_ID = 1234L;
@@ -49,11 +50,14 @@ class MessageControllerTest {
   private MessageDto testMessageDto1;
   private MessageDto testMessageDto2;
 
+
+
   @LocalServerPort
   private int port;
 
   @Autowired
   private TestRestTemplate restTemplate;
+
 
   @BeforeEach
   void setup(){
